@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bijfehnq27scq"]
+[gd_scene load_steps=14 format=3 uid="uid://bijfehnq27scq"]
 
 [ext_resource type="Texture2D" uid="uid://b0qx6l5vxd2ft" path="res://cats/sprites/orange_cat/ref.png" id="1_ed8f5"]
 [ext_resource type="Texture2D" uid="uid://dktman3xoq18c" path="res://cats/sprites/orange_cat/body.png" id="2_sep8r"]
@@ -113,11 +113,40 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("head:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_02g1y")]
+}
+
+[sub_resource type="Animation" id="Animation_fgj2n"]
+resource_name = "wake_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_02g1y")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgj2n"]
 _data = {
 &"RESET": SubResource("Animation_sep8r"),
-&"idle_sleep": SubResource("Animation_ed8f5")
+&"idle_sleep": SubResource("Animation_ed8f5"),
+&"wake_up": SubResource("Animation_fgj2n")
 }
 
 [node name="OrangeCat" type="Node2D"]
@@ -159,6 +188,10 @@ texture = ExtResource("5_v7a02")
 position = Vector2(271, 25)
 texture = ExtResource("6_02g1y")
 
+[node name="b_ear" type="Sprite2D" parent="head"]
+position = Vector2(43, -65)
+texture = ExtResource("8_jepa5")
+
 [node name="f_ear" type="Sprite2D" parent="head"]
 position = Vector2(-60, -72)
 texture = ExtResource("7_4nwqa")
@@ -168,10 +201,6 @@ texture = ExtResource("7_4nwqa")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="head/f_ear/StaticBody2D"]
 position = Vector2(21, 14)
 polygon = PackedVector2Array(-1, -1, -12, -47, -28, -29, -44.5672, 9.4057, -30, 19, -6, 15)
-
-[node name="b_ear" type="Sprite2D" parent="head"]
-position = Vector2(43, -65)
-texture = ExtResource("8_jepa5")
 
 [node name="tail" type="Sprite2D" parent="."]
 position = Vector2(-172, 190)

@@ -1,9 +1,6 @@
 name: Publish game to itch.io
 
 on:
-  push:
-    branches:
-      - "live"
   workflow_dispatch:
 
 jobs:

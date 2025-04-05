@@ -17,6 +17,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 offset_right = 158.0
 offset_bottom = 100.0
+theme_override_constants/margin_top = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2

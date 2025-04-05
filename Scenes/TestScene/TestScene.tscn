@@ -9,13 +9,25 @@
 
 [node name="Room" parent="." instance=ExtResource("1_qsb0u")]
 
-[node name="SleepBar" parent="." instance=ExtResource("2_bsxja")]
-
-[node name="AmmoCounter" parent="." instance=ExtResource("3_dl6we")]
-offset_left = 969.0
-offset_top = 3.0
-offset_right = 1069.0
-offset_bottom = 103.0
-
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_dl6we")]
 position = Vector2(164, 729)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SleepBar" parent="CanvasLayer/Control" instance=ExtResource("2_bsxja")]
+layout_mode = 1
+
+[node name="AmmoCounter" parent="CanvasLayer/Control" instance=ExtResource("3_dl6we")]
+layout_mode = 1
+offset_left = 949.042
+offset_top = 3.0
+offset_right = 1049.04
+offset_bottom = 103.0

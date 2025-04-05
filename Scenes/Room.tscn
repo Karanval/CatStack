@@ -27,7 +27,6 @@ size = Vector2(306, 17)
 size = Vector2(207, 8)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7gm67"]
-friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xebr5"]
 size = Vector2(2630, 27)

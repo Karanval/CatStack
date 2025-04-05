@@ -1,7 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvnykwmrnn8ro"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bgvc"]
-size = Vector2(580, 110)
+[ext_resource type="Texture2D" uid="uid://cq4qy1jmwq8xd" path="res://graphics/room/floating_book_shelf.png" id="1_vbqm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wbbn"]
 size = Vector2(580, 110)
@@ -9,7 +8,9 @@ size = Vector2(580, 110)
 [node name="ShelfLarge" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_1bgvc")
+position = Vector2(0, -1)
+scale = Vector2(1.065, 1.065)
+texture = ExtResource("1_vbqm8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 32

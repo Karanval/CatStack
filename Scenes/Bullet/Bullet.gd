@@ -2,6 +2,7 @@ extends Node2D
 
 @export var DAMAGE: int
 @export var DIRECTION: Vector2
+@export var START_POSITION: Vector2
 @export var SPEED: int
 @export var CAN_HIT_OBJECTS: bool
 
@@ -10,6 +11,7 @@ signal damage_inflicted
 var _velocity
 
 func _ready() -> void:
+	self.position = START_POSITION
 	_velocity = DIRECTION.normalized() * SPEED
 	
 func _physics_process(delta: float) -> void:

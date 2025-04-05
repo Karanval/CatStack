@@ -9,6 +9,7 @@ height = 188.0
 
 [node name="BasicMonster" type="RigidBody2D" groups=["monsters"]]
 collision_layer = 4
+lock_rotation = true
 script = ExtResource("1_uvs0d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

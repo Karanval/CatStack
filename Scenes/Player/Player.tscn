@@ -1,8 +1,8 @@
 [gd_scene load_steps=32 format=3 uid="uid://dnimq36cs47g6"]
 
-[ext_resource type="Script" uid="uid://cmyv8hg714icu" path="res://player/PlayerInput.gd" id="1_3c3w1"]
+[ext_resource type="Script" uid="uid://cmyv8hg714icu" path="res://Scenes/Player/PlayerInput.gd" id="1_3c3w1"]
 [ext_resource type="Texture2D" uid="uid://wunmuyana421" path="res://graphics/main_character/mc_back_arm.png" id="2_gskgj"]
-[ext_resource type="Script" uid="uid://dhiti1gk3sg0v" path="res://player/animations.gd" id="2_ndjxb"]
+[ext_resource type="Script" uid="uid://dhiti1gk3sg0v" path="res://Scenes/Player/animations.gd" id="2_ndjxb"]
 [ext_resource type="Texture2D" uid="uid://btu3eih8xwqis" path="res://graphics/main_character/mc_back_leg.png" id="3_06mnu"]
 [ext_resource type="Texture2D" uid="uid://bq3bquf0tb6xt" path="res://graphics/main_character/mc_front_leg.png" id="4_mhpjh"]
 [ext_resource type="Texture2D" uid="uid://c4mnfvm26kgvs" path="res://graphics/main_character/mc_body.png" id="5_ndjxb"]

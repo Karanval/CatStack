@@ -31,8 +31,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Shoot"):
 		shoot()
 
-	set_collision_mask_value(6, !event.is_action_pressed("Down"))
-
+	if (event.is_action_pressed("Down")):
+		set_collision_mask_value(6, false)
+	if (event.is_action_released("Down")):
+		set_collision_mask_value(6, true)
+		
 
 func can_extra_jump() -> bool:
 	return !is_on_floor() and jump_count <= extra_jump_count

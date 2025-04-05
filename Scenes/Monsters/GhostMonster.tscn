@@ -7,7 +7,8 @@
 radius = 82.0
 height = 250.0
 
-[node name="GhostMonster" type="RigidBody2D"]
+[node name="GhostMonster" type="RigidBody2D" groups=["monsters"]]
+collision_layer = 4
 script = ExtResource("1_ltl8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

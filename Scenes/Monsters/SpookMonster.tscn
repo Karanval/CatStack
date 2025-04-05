@@ -1,0 +1,97 @@
+[gd_scene load_steps=21 format=3 uid="uid://c0ah52ux112ga"]
+
+[ext_resource type="PackedScene" uid="uid://pyl3oxaochjd" path="res://Scenes/Monsters/BaseMonster.tscn" id="1_y6kab"]
+[ext_resource type="Texture2D" uid="uid://c6bhwy3nsr5mf" path="res://graphics/nightmares/spook0000.png" id="2_6u2rc"]
+[ext_resource type="Script" uid="uid://bd5hsgc78llap" path="res://Scenes/Monsters/spook_monster.gd" id="2_s1bvu"]
+[ext_resource type="Texture2D" uid="uid://7h0cr8r7q34o" path="res://graphics/nightmares/spook0002.png" id="3_s1bvu"]
+[ext_resource type="Texture2D" uid="uid://dh7u2xngom80g" path="res://graphics/nightmares/spook0004.png" id="4_3hpw8"]
+[ext_resource type="Texture2D" uid="uid://dcpnr70swl32j" path="res://graphics/nightmares/spook0006.png" id="5_vrb3l"]
+[ext_resource type="Texture2D" uid="uid://dub6qje8gjwrf" path="res://graphics/nightmares/spook0008.png" id="6_ajo1p"]
+[ext_resource type="Texture2D" uid="uid://mcay8wtna22s" path="res://graphics/nightmares/spook0010.png" id="7_gaj0h"]
+[ext_resource type="Texture2D" uid="uid://caysx11c6dx2j" path="res://graphics/nightmares/spook0012.png" id="8_8w5lg"]
+[ext_resource type="Texture2D" uid="uid://dwpwo4wu52mp6" path="res://graphics/nightmares/spook0014.png" id="9_ptv6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_newrb"]
+atlas = ExtResource("2_6u2rc")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkqbb"]
+atlas = ExtResource("3_s1bvu")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j5eq"]
+atlas = ExtResource("4_3hpw8")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eq5j"]
+atlas = ExtResource("5_vrb3l")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pqpf"]
+atlas = ExtResource("6_ajo1p")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4k36"]
+atlas = ExtResource("7_gaj0h")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyqrb"]
+atlas = ExtResource("8_8w5lg")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4blaa"]
+atlas = ExtResource("9_ptv6t")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lyqab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_newrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkqbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j5eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2eq5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pqpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4k36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyqrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4blaa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxip7"]
+radius = 55.0
+height = 176.0
+
+[node name="BaseMonster" instance=ExtResource("1_y6kab")]
+collision_layer = 4
+collision_mask = 17
+mass = 50.0
+lock_rotation = true
+script = ExtResource("2_s1bvu")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_lyqab")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-14, 1)
+shape = SubResource("CapsuleShape2D_pxip7")

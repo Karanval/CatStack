@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dn4f7ugv7hbev"]
 
-[ext_resource type="Script" uid="uid://b4202kn4uopfc" path="res://Scenes/Monsters/basic_monster.gd" id="1_uvs0d"]
+[ext_resource type="Script" uid="uid://b4202kn4uopfc" path="res://Scenes/Monsters/Backup/basic_monster.gd" id="1_uvs0d"]
 [ext_resource type="Texture2D" uid="uid://c6bhwy3nsr5mf" path="res://graphics/nightmares/spook0000.png" id="2_5ics4"]
 [ext_resource type="Texture2D" uid="uid://7h0cr8r7q34o" path="res://graphics/nightmares/spook0002.png" id="3_kbvjp"]
 [ext_resource type="Texture2D" uid="uid://dh7u2xngom80g" path="res://graphics/nightmares/spook0004.png" id="4_6qn4q"]

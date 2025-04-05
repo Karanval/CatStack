@@ -3,7 +3,7 @@ extends Node2D
 @export var MAX_SLEEP: int
 @export var CUDDLE_PER_SECOND: int
 
-const _CUDDLE_UPDATES_PER_SECOND: int = 10
+const _CUDDLE_UPDATES_PER_SECOND: float = 10
 
 var _sleep: int
 var _cuddle: bool

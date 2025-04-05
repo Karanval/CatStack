@@ -1,21 +1,173 @@
-[gd_scene load_steps=4 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=16 format=3 uid="uid://0prw0oi6d0sx"]
 
-[ext_resource type="PackedScene" uid="uid://0vvckhobws5t" path="res://Scenes/Bed.tscn" id="1_uj218"]
-[ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Shelf.tscn" id="2_a2si3"]
-[ext_resource type="PackedScene" uid="uid://cd5q35knrsibt" path="res://Scenes/Drawers.tscn" id="3_aaq88"]
+[ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
+[ext_resource type="PackedScene" uid="uid://cd5q35knrsibt" path="res://Scenes/Furniture/Drawers.tscn" id="3_aaq88"]
+[ext_resource type="Texture2D" uid="uid://dblr5vkl1hp5j" path="res://graphics/room_layout_sketch.png" id="4_a2si3"]
+[ext_resource type="PackedScene" uid="uid://co5y4sfs0kysd" path="res://Scenes/Furniture/ShelfSmall.tscn" id="4_aaq88"]
+[ext_resource type="PackedScene" uid="uid://dvnykwmrnn8ro" path="res://Scenes/Furniture/ShelfLarge.tscn" id="5_7gm67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2si3"]
+size = Vector2(464, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaq88"]
+size = Vector2(464, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gm67"]
+size = Vector2(376, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xebr5"]
+size = Vector2(1928, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si31g"]
+size = Vector2(20, 967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mimag"]
+size = Vector2(20, 967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijr7e"]
+size = Vector2(276, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khqja"]
+size = Vector2(384, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0f8h"]
+size = Vector2(457, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vofke"]
+size = Vector2(131, 151)
 
 [node name="Room" type="Node2D"]
 
+[node name="RoomLayoutSketch" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(960, 630)
+texture = ExtResource("4_a2si3")
+
 [node name="Furniture" type="Node2D" parent="."]
 
-[node name="Bed" parent="Furniture" instance=ExtResource("1_uj218")]
-position = Vector2(351, 952)
-
 [node name="Shelf" parent="Furniture" instance=ExtResource("2_a2si3")]
-position = Vector2(585, 474)
+position = Vector2(928, 587)
 
 [node name="Drawers" parent="Furniture" instance=ExtResource("3_aaq88")]
-position = Vector2(1063, 909)
+position = Vector2(724, 837)
 
 [node name="Shelf2" parent="Furniture" instance=ExtResource("2_a2si3")]
-position = Vector2(1416, 477)
+position = Vector2(919, 464)
+
+[node name="ShelfSmall" parent="Furniture" instance=ExtResource("4_aaq88")]
+position = Vector2(91, 487)
+
+[node name="ShelfSmall2" parent="Furniture" instance=ExtResource("4_aaq88")]
+position = Vector2(182, 611)
+
+[node name="ShelfLarge" parent="Furniture" instance=ExtResource("5_7gm67")]
+position = Vector2(303, 277)
+
+[node name="ShelfLarge2" parent="Furniture" instance=ExtResource("5_7gm67")]
+position = Vector2(949, 278)
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="WindowSillBottom" type="StaticBody2D" parent="Collisions"]
+position = Vector2(357, 673)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WindowSillBottom"]
+position = Vector2(155, 6.5)
+shape = SubResource("RectangleShape2D_a2si3")
+
+[node name="WindowSillTop" type="StaticBody2D" parent="Collisions"]
+position = Vector2(375, 382)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WindowSillTop"]
+position = Vector2(155, 6.5)
+shape = SubResource("RectangleShape2D_aaq88")
+
+[node name="Desk" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1252, 765)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Desk"]
+position = Vector2(-178, 8)
+shape = SubResource("RectangleShape2D_7gm67")
+
+[node name="Floor" type="StaticBody2D" parent="Collisions"]
+position = Vector2(804, 948)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Floor"]
+position = Vector2(155, 6.5)
+shape = SubResource("RectangleShape2D_xebr5")
+
+[node name="WallLeft" type="StaticBody2D" parent="Collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WallLeft"]
+position = Vector2(0, 473.5)
+shape = SubResource("RectangleShape2D_si31g")
+
+[node name="WallRight" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1919, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WallRight"]
+position = Vector2(0, 473.5)
+shape = SubResource("RectangleShape2D_mimag")
+
+[node name="BookshelfFloor1" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1399, 856)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor1"]
+shape = SubResource("RectangleShape2D_ijr7e")
+
+[node name="BookshelfFloor2" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1399, 740)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor2"]
+shape = SubResource("RectangleShape2D_ijr7e")
+
+[node name="BookshelfFloor3" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1398, 652)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor3"]
+shape = SubResource("RectangleShape2D_ijr7e")
+
+[node name="BookshelfFloor4" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1395, 535)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor4"]
+shape = SubResource("RectangleShape2D_ijr7e")
+
+[node name="BookshelfFloor5" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1395, 432)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor5"]
+shape = SubResource("RectangleShape2D_ijr7e")
+
+[node name="BookshelfFloor6" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1397, 322)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor6"]
+position = Vector2(54, 0)
+shape = SubResource("RectangleShape2D_khqja")
+
+[node name="Bed" type="StaticBody2D" parent="Collisions"]
+position = Vector2(63, 776)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Bed"]
+position = Vector2(218.5, 38)
+shape = SubResource("RectangleShape2D_l0f8h")
+
+[node name="BedHead" type="StaticBody2D" parent="Collisions"]
+position = Vector2(70, 752)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BedHead"]
+shape = SubResource("RectangleShape2D_vofke")

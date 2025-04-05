@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vv76aw14qh3n"]
 
-[ext_resource type="Script" uid="uid://bt7b7sufj3408" path="res://Scenes/SleepBar/sleep_bar.gd" id="1_5ulla"]
+[ext_resource type="Script" uid="uid://bt7b7sufj3408" path="res://Scenes/SleepBar/SleepBar.gd" id="1_5ulla"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pahgm"]
 

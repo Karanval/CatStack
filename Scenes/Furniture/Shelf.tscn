@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://blm4cbfri34hq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i2jh0"]
-size = Vector2(350, 50)
+size = Vector2(225, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2jh0"]
-size = Vector2(2.17729, 1.55039)
+size = Vector2(1.39347, 0.930233)
 
 [node name="Shelf" type="Node2D"]
 

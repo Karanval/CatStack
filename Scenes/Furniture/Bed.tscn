@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://0vvckhobws5t"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fvvy2"]
-size = Vector2(700, 250)
+size = Vector2(500, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plytk"]
-size = Vector2(700, 250)
+size = Vector2(500, 250)
 
 [node name="Bed" type="Node2D"]
 

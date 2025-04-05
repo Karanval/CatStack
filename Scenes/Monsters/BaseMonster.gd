@@ -18,12 +18,14 @@ enum MonsterState {
 
 var state := MonsterState.MOVING
 
+func take_damage(damage: int):
+	health -= damage
+	if health <= 0:
+		call_deferred("queue_free")
+
 func _physics_process(delta: float) -> void:
 	if state == MonsterState.MOVING:
 		move_and_collide(get_velocity(delta))
-		
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	call_deferred("queue_free")
 
 func get_velocity(delta: float):
 	return Vector2(SPEED * speed_modifier * delta, 0)

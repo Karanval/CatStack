@@ -31,7 +31,8 @@ func _change_sleep(amount: int) -> void:
 # Player cuddles with the child
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("monsters"):
-		_change_sleep(-10)
+		var monster = body as BaseMonster
+		_change_sleep(-monster.damage)
 	else:
 		$CuddleTime.paused = false
 

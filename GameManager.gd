@@ -53,12 +53,5 @@ func getAmmo() -> int:
 	
 func _switch_to_game_over_screen():
 	_init()
-	#get_node("/root/TestScene").free()
-	var root  = get_tree().root
-	var level = root.get_node("TestScene")
-	root.remove_child(level)
-	level.call_deferred("free")
-
-	# Add the next level
-	var next_level = game_over_scene.instantiate()
-	root.add_child(next_level)
+	
+	get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")

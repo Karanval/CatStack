@@ -24,6 +24,14 @@ window/size/viewport_height=1080
 
 project/assembly_name="CatStack"
 
+[layer_names]
+
+2d_physics/layer_1="environment"
+2d_physics/layer_2="player"
+2d_physics/layer_3="monsters"
+2d_physics/layer_4="child"
+2d_physics/layer_5="player_bullets"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

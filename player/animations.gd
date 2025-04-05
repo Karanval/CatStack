@@ -20,15 +20,15 @@ func set_movement(velocity: Vector2, on_floor: bool) -> void:
 		
 	if velocity.x == 0.0:
 		_running = false
-		_animation_player.play("RESET")
+		#_animation_player.play("RESET")
 		_animation_player.play("idle")
 		#set("parameters/conditions/jump",false)
 		#set("parameters/conditions/on_floor",false)
 		#set("parameters/conditions/run",false)
 		#set("parameters/conditions/to_idle",true)
-	elif !_running:
-		_running = true
-		_animation_player.play("RESET")
+	else: # !_running:
+		#_running = true
+		#_animation_player.play("RESET")
 		_animation_player.play("run")
 		#set("parameters/conditions/jump",false)
 		#set("parameters/conditions/on_floor",false)
@@ -38,7 +38,7 @@ func set_movement(velocity: Vector2, on_floor: bool) -> void:
 
 func jump() -> void:
 	_jumping = true
-	_animation_player.play("RESET")
+	#_animation_player.play("RESET")
 	_animation_player.play("falling")
 	#set("parameters/conditions/on_floor",false)
 	#set("parameters/conditions/run",false)
@@ -48,7 +48,7 @@ func jump() -> void:
 
 func land() -> void:
 	_jumping = false
-	_animation_player.play("RESET")
+	#_animation_player.play("RESET")
 	_animation_player.play("idle")
 	#set("parameters/conditions/on_floor",true)
 	##set("parameters/conditions/run",false)

@@ -19,9 +19,6 @@ func _ready() -> void:
 	max_contacts_reported = 1
 	$DestroyTimer.start(LIFETIME_SECONDS)
 	
-func _physics_process(delta: float) -> void:
-	move_and_collide(_velocity)
-	
 # Bullet hits a monster
 func _on_body_entered(body: Node) -> void:
 	var monster := body as BaseMonster

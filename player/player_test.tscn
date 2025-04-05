@@ -8,6 +8,8 @@ size = Vector2(1101.5, 20)
 [node name="PlayerTest" type="Node2D"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_a6a0u")]
+move_speed = 400
+extra_jump_count = 1
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 scale = Vector2(2, 2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=19 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="PackedScene" uid="uid://cofp715asgg2m" path="res://Scenes/Child/Child.tscn" id="2_7gm67"]
 [ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
@@ -15,6 +15,12 @@ size = Vector2(464, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gm67"]
 size = Vector2(376, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ah8"]
+size = Vector2(138, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sh5y"]
+size = Vector2(207, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xebr5"]
 size = Vector2(1928, 27)
@@ -103,6 +109,28 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Desk"]
 position = Vector2(-178, 8)
 shape = SubResource("RectangleShape2D_7gm67")
+one_way_collision = true
+
+[node name="Chair" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1273, 830)
+collision_layer = 32
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Chair"]
+position = Vector2(-296, 1.5)
+shape = SubResource("RectangleShape2D_f1ah8")
+one_way_collision = true
+
+[node name="Monitor" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1218, 624)
+collision_layer = 32
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Monitor"]
+position = Vector2(-93.5, -6)
+shape = SubResource("RectangleShape2D_0sh5y")
 one_way_collision = true
 
 [node name="Floor" type="StaticBody2D" parent="Collisions"]

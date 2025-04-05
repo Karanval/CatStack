@@ -1,12 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://cofp715asgg2m"]
+[gd_scene load_steps=13 format=3 uid="uid://cofp715asgg2m"]
 
 [ext_resource type="Script" uid="uid://ksg5gwjdoj45" path="res://Scenes/Child/Child.gd" id="1_axtaq"]
+[ext_resource type="Texture2D" uid="uid://cg03131xmnlqd" path="res://graphics/main_character/child_1.png" id="2_imrkf"]
+[ext_resource type="Texture2D" uid="uid://dm5yd470fllu3" path="res://graphics/main_character/child_scared_1.png" id="2_t3mdp"]
+[ext_resource type="Texture2D" uid="uid://dxfj4y5vvslgi" path="res://graphics/main_character/child_2.png" id="3_14hov"]
+[ext_resource type="Texture2D" uid="uid://cln61pa14r1fj" path="res://graphics/main_character/child_scared_2.png" id="3_wiuli"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i2jh0"]
 size = Vector2(150, 70)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb13d"]
+atlas = ExtResource("2_t3mdp")
+region = Rect2(0, 0, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m0g7"]
+atlas = ExtResource("3_wiuli")
+region = Rect2(0, 0, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3mdp"]
+atlas = ExtResource("2_imrkf")
+region = Rect2(0, 0, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiuli"]
+atlas = ExtResource("3_14hov")
+region = Rect2(0, 0, 512, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sb13d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb13d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m0g7")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_t3mdp")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_wiuli")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2jh0"]
-size = Vector2(150, 70)
+size = Vector2(160, 93)
 
 [node name="Child" type="Node2D"]
 script = ExtResource("1_axtaq")
@@ -14,14 +59,21 @@ MAX_SLEEP = 100
 CUDDLE_PER_SECOND = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = SubResource("PlaceholderTexture2D_i2jh0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sb13d")
+animation = &"sleep"
+autoplay = "sleep"
+offset = Vector2(130.155, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2.72531e-08, 0)
+position = Vector2(54, -12.5)
 shape = SubResource("RectangleShape2D_i2jh0")
 
 [node name="CuddleTime" type="Timer" parent="."]

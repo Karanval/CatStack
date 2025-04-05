@@ -24,7 +24,7 @@ func _on_body_entered(body: Node) -> void:
 	var monster := body as BaseMonster
 	if not monster:
 		return
-	set_collision_mask_value(4, false)
+	set_collision_mask_value(3, false)
 	
 	monster.take_damage(DAMAGE)
 	print("Hit a monster")

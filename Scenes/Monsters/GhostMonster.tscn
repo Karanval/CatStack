@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://0ki11nr17g13"]
 
-[ext_resource type="PackedScene" uid="uid://pyl3oxaochjd" path="res://Scenes/Monsters/BaseMonster.tscn" id="1_3xbhu"]
-[ext_resource type="Script" uid="uid://yp50mf2obg6s" path="res://Scenes/Monsters/ghost_monster.gd" id="1_ltl8p"]
+[ext_resource type="PackedScene" uid="uid://dhcky1bfxdgsq" path="res://Scenes/Monsters/BaseMonster.tscn" id="1_3xbhu"]
+[ext_resource type="Script" uid="uid://bo0kqwcq8s5w7" path="res://Scenes/Monsters/ghost_monster.gd" id="1_ltl8p"]
 [ext_resource type="Texture2D" uid="uid://br7f4qhmjgn2x" path="res://graphics/nighmare_3.png" id="2_ltl8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmn5x"]
@@ -24,7 +24,7 @@ radius = 81.0062
 
 [node name="BaseMonster" instance=ExtResource("1_3xbhu")]
 collision_layer = 4
-collision_mask = 16
+collision_mask = 0
 mass = 50.0
 gravity_scale = 0.0
 lock_rotation = true

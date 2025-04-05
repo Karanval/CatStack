@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var jump_gravity: float = (-2 * jump_height) / (jump_time_to_peak * jump_time_to_peak) * -1
 @onready var fall_gravity: float = (-2 * jump_height) / (jump_time_to_descent* jump_time_to_descent) * -1
 
-var bullet_scene: PackedScene = preload("res://Scenes/Bullet/Bullet.tscn")
+var bullet_scene: PackedScene = preload("res://Scenes/Bullet/GravityBullet.tscn")
 
 @export var extra_jump_count: int = 1 # How many extra jumps the player is allowed after jumping from a surface (1 is double jump)
 

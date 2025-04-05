@@ -18,6 +18,10 @@ enum MonsterState {
 
 var state := MonsterState.MOVING
 
+func _ready() -> void:
+	contact_monitor = true
+	max_contacts_reported = 1
+	
 func take_damage(damage: int):
 	health -= damage
 	if health <= 0:

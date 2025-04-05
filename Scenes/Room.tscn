@@ -84,7 +84,7 @@ shader_parameter/seed = 5.0
 [node name="Room" type="Node2D"]
 
 [node name="Wallpaper" type="Sprite2D" parent="."]
-position = Vector2(961, 631)
+position = Vector2(961, 424)
 texture = ExtResource("1_xebr5")
 
 [node name="RoomLayoutSketch" type="Sprite2D" parent="."]

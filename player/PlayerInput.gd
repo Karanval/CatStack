@@ -10,14 +10,19 @@ extends CharacterBody2D
 @onready var fall_gravity: float = (-2 * jump_height) / (jump_time_to_descent* jump_time_to_descent) * -1
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Jump"):
+		jump()
+
+	set_collision_mask_value(6, !event.is_action_pressed("Down"))
+
+
 func _physics_process(delta):
 	velocity.y += _get_gravity() * delta
 	set_move_velocity()
 
-	if Input.is_action_just_pressed("Jump"):
-		jump()
-
 	move_and_slide()
+
 
 func _get_gravity() -> float:
 	return jump_gravity if velocity.y <= 0 else fall_gravity

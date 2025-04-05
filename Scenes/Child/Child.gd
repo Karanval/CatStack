@@ -14,6 +14,8 @@ func _ready() -> void:
 	_cuddle = false
 	_sleep = MAX_SLEEP
 	GameManager.changeSleep(_sleep)
+	$CuddleTime.start(1.0/_CUDDLE_UPDATES_PER_SECOND)
+	$CuddleTime.paused = true
 	
 func _change_sleep(amount: int) -> void:
 	_sleep += amount
@@ -32,7 +34,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 # Player cuddles with the child
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$CuddleTime.start(1.0/_CUDDLE_UPDATES_PER_SECOND)
+	$CuddleTime.paused = false
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	$CuddleTime.paused = true

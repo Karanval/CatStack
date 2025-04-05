@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=31 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="Texture2D" uid="uid://pgyf3sjlabiq" path="res://graphics/room/static_room.png" id="1_7gm67"]
 [ext_resource type="Texture2D" uid="uid://da03erc4l1ogv" path="res://graphics/room/wallpaper.png" id="1_xebr5"]
@@ -8,8 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dvnykwmrnn8ro" path="res://Scenes/Furniture/ShelfLarge.tscn" id="5_7gm67"]
 [ext_resource type="PackedScene" uid="uid://hefjpvbwdrbx" path="res://Scenes/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="7_xebr5"]
 [ext_resource type="PackedScene" uid="uid://d0fu2afheeg0n" path="res://Scenes/Items/noise_monke.tscn" id="8_si31g"]
+[ext_resource type="PackedScene" uid="uid://dkne4iudfj5p6" path="res://Scenes/Items/noise_maraca.tscn" id="9_khqja"]
 [ext_resource type="PackedScene" uid="uid://debk3xwn0o52v" path="res://Scenes/Items/noise_chicken.tscn" id="9_mimag"]
 [ext_resource type="PackedScene" uid="uid://cv67nbn75bg1i" path="res://Scenes/BallJar/BallJar.tscn" id="10_ijr7e"]
+[ext_resource type="Texture2D" uid="uid://d0msbj3m0y4rk" path="res://graphics/items/books_1.png" id="10_l0f8h"]
+[ext_resource type="Texture2D" uid="uid://bgqaqkv8rf2nx" path="res://graphics/items/books_1_2.png" id="11_0sh5y"]
+[ext_resource type="Texture2D" uid="uid://cou7vo0n6xg4q" path="res://graphics/items/books_2.png" id="11_vofke"]
+[ext_resource type="Texture2D" uid="uid://5yyn0ecortyy" path="res://graphics/items/books_3.png" id="12_f1ah8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2si3"]
 size = Vector2(464, 27)
@@ -278,18 +283,85 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BedHead"]
 shape = SubResource("RectangleShape2D_vofke")
 
+[node name="decor_items" type="Node2D" parent="."]
+
+[node name="books" type="Sprite2D" parent="decor_items"]
+position = Vector2(1509, 374)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_l0f8h")
+
+[node name="books2" type="Sprite2D" parent="decor_items"]
+position = Vector2(1464, 475)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_0sh5y")
+
+[node name="books3" type="Sprite2D" parent="decor_items"]
+position = Vector2(1387, 477)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("10_l0f8h")
+flip_v = true
+
+[node name="books4" type="Sprite2D" parent="decor_items"]
+position = Vector2(1309, 576)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_0sh5y")
+flip_v = true
+
+[node name="books7" type="Sprite2D" parent="decor_items"]
+position = Vector2(1372, 574)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_vofke")
+
+[node name="books8" type="Sprite2D" parent="decor_items"]
+position = Vector2(1449, 573)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f1ah8")
+
+[node name="books9" type="Sprite2D" parent="decor_items"]
+position = Vector2(922, 277)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1ah8")
+
+[node name="books10" type="Sprite2D" parent="decor_items"]
+position = Vector2(84, 277)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_f1ah8")
+
+[node name="books6" type="Sprite2D" parent="decor_items"]
+position = Vector2(1020, 278)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_vofke")
+
+[node name="books5" type="Sprite2D" parent="decor_items"]
+position = Vector2(1089, 280)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("10_l0f8h")
+flip_h = true
+flip_v = true
+
 [node name="noise_makers" type="Node2D" parent="."]
 
 [node name="NoiseMonke" parent="noise_makers" instance=ExtResource("8_si31g")]
 position = Vector2(848, 531)
 
 [node name="NoiseChicken" parent="noise_makers" instance=ExtResource("9_mimag")]
-position = Vector2(1368, 697)
-rotation = 0.0770276
+position = Vector2(1459, 574)
+rotation = -0.0841647
+scale = Vector2(-1.2, 1.2)
 
 [node name="NoiseChicken2" parent="noise_makers" instance=ExtResource("9_mimag")]
-position = Vector2(1463, 796)
+position = Vector2(1333, 795)
 rotation = 0.0770276
+scale = Vector2(1.2, 1.2)
+
+[node name="NoiseMaraca" parent="noise_makers" instance=ExtResource("9_khqja")]
+position = Vector2(1584, 304)
+rotation = -0.188884
+
+[node name="NoiseMaraca2" parent="noise_makers" instance=ExtResource("9_khqja")]
+position = Vector2(929, 716)
+rotation = 0.178296
+scale = Vector2(-1, 1)
 
 [node name="MonsterSpawner" parent="." instance=ExtResource("7_xebr5")]
 ground_spawn_locations = Array[Vector2]([Vector2(2055, 800)])

@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8y38h51ebmw0"]
+[gd_scene load_steps=7 format=3 uid="uid://bkh3ut2kq58l6"]
 
-[ext_resource type="Script" uid="uid://c0wfn18okhxhp" path="res://Scenes/GameOver/GameOver.gd" id="1_ybu6n"]
-[ext_resource type="Texture2D" uid="uid://csx2mpbxupdu0" path="res://graphics/icons/wallpaper_ui.png" id="2_h2hei"]
-[ext_resource type="Theme" uid="uid://uk4f1ybuct46" path="res://graphics/new_theme.tres" id="2_ow8it"]
-[ext_resource type="Texture2D" uid="uid://gtmjhmkj5rs6" path="res://graphics/icons/button_normal.png" id="3_h2hei"]
-[ext_resource type="Texture2D" uid="uid://6hn2icqdic3h" path="res://graphics/icons/button_pressed.png" id="4_ow8it"]
+[ext_resource type="Script" uid="uid://c7rq5ayjeec6w" path="res://Scenes/GameOver/GameStart.gd" id="1_1s71k"]
+[ext_resource type="Theme" uid="uid://uk4f1ybuct46" path="res://graphics/new_theme.tres" id="2_1s71k"]
+[ext_resource type="Texture2D" uid="uid://csx2mpbxupdu0" path="res://graphics/icons/wallpaper_ui.png" id="3_jdjq3"]
+[ext_resource type="Texture2D" uid="uid://ul2vp2gfbbo1" path="res://graphics/icons/logo.png" id="4_1s71k"]
+[ext_resource type="Texture2D" uid="uid://gtmjhmkj5rs6" path="res://graphics/icons/button_normal.png" id="4_ky6be"]
+[ext_resource type="Texture2D" uid="uid://6hn2icqdic3h" path="res://graphics/icons/button_pressed.png" id="5_7to4s"]
 
-[node name="GameOver" type="Node2D"]
-script = ExtResource("1_ybu6n")
+[node name="GameStart" type="Node2D"]
+script = ExtResource("1_1s71k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -20,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("2_ow8it")
+theme = ExtResource("2_1s71k")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -29,28 +30,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_h2hei")
+texture = ExtResource("3_jdjq3")
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -410.0
-offset_top = -241.0
-offset_right = 410.0
-offset_bottom = -64.0
+offset_top = -250.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.952836, 0.873901, 0.874863, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 50
-theme_override_font_sizes/font_size = 120
-text = "GAME OVER"
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(0.65, 0.65)
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 400
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_1s71k")
+expand_mode = 3
+stretch_mode = 3
 
 [node name="CenterContainer" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -61,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_top = 200
+theme_override_constants/margin_top = 700
 metadata/_edit_lock_ = true
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/CenterContainer"]
@@ -70,8 +72,9 @@ custom_minimum_size = Vector2(500, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_h2hei")
-texture_pressed = ExtResource("4_ow8it")
+texture_normal = ExtResource("4_ky6be")
+texture_pressed = ExtResource("5_7to4s")
+texture_hover = ExtResource("4_ky6be")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/CenterContainer/TextureButton"]
@@ -89,6 +92,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.952836, 0.873901, 0.874863, 1)
 theme_override_font_sizes/font_size = 100
-text = "Restart"
+text = "Start"
 
-[connection signal="button_down" from="CanvasLayer/Control/CenterContainer/TextureButton" to="." method="_on_restart_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/CenterContainer/TextureButton" to="." method="start_game"]

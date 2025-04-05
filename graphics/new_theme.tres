@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://uk4f1ybuct46"]
+
+[ext_resource type="FontFile" uid="uid://vnxgnvswhtqo" path="res://graphics/icons/Orbitron,Underdog/Underdog/Underdog-Regular.ttf" id="1_cbnnn"]
+
+[resource]
+default_font = ExtResource("1_cbnnn")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnimq36cs47g6"]
+
+[ext_resource type="Script" uid="uid://cmyv8hg714icu" path="res://player/PlayerInput.gd" id="1_3c3w1"]
+[ext_resource type="Texture2D" uid="uid://bg7xaohav5mfn" path="res://graphics/teddy_bear_sketch.png" id="2_3c3w1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnvi2"]
+radius = 30.0
+height = 120.0
+
+[node name="PlayerCharacter" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 13
+script = ExtResource("1_3c3w1")
+jump_height = 130
+jump_time_to_peak = 0.35
+jump_time_to_descent = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_wnvi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3c3w1")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://0prw0oi6d0sx"]
 
-[ext_resource type="PackedScene" uid="uid://0vvckhobws5t" path="res://Scenes/Bed.tscn" id="1_uj218"]
-[ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Shelf.tscn" id="2_a2si3"]
-[ext_resource type="PackedScene" uid="uid://cd5q35knrsibt" path="res://Scenes/Drawers.tscn" id="3_aaq88"]
+[ext_resource type="PackedScene" uid="uid://0vvckhobws5t" path="res://Scenes/Furniture/Bed.tscn" id="1_uj218"]
+[ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
+[ext_resource type="PackedScene" uid="uid://cd5q35knrsibt" path="res://Scenes/Furniture/Drawers.tscn" id="3_aaq88"]
 
 [node name="Room" type="Node2D"]
 

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://vv76aw14qh3n"]
+
+[ext_resource type="Script" uid="uid://bt7b7sufj3408" path="res://sleep_bar.gd" id="1_5ulla"]
+[ext_resource type="Texture2D" uid="uid://bp8cwv7qsstcg" path="res://icon.svg" id="2_5mi0x"]
+
+[node name="SleepBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ulla")
+
+[node name="SleepValue" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 22.0
+offset_right = 85.0
+offset_bottom = 62.0
+text = "Sleep %"
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 7.0
+offset_right = 752.0
+offset_bottom = 63.0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = ExtResource("2_5mi0x")

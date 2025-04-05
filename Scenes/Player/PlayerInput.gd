@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var max_ammo: int = 15
 @export var jump_time_to_peak: float = 0.5
 @export var jump_time_to_descent: float = 0.4
-@export var animator : PlayerAnimator
+@export var animator: PlayerAnimator
 
 @onready var jump_velocity: float = (2 * jump_height) / jump_time_to_peak * -1
 @onready var jump_gravity: float = (-2 * jump_height) / (jump_time_to_peak * jump_time_to_peak) * -1
@@ -18,18 +18,24 @@ var bullet_scene: PackedScene = preload("res://Scenes/Bullet/GravityBullet.tscn"
 var jump_count: int = 0
 var ammo_count: int
 
+
 func _ready() -> void:
 	ammo_count = max_ammo
 	GameManager.changeAmmo(ammo_count)
 
+
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Jump") and (is_on_floor() or (!is_on_floor() and jump_count <= extra_jump_count)):
+	if event.is_action_pressed("Jump") and (is_on_floor() or can_extra_jump()):
 		jump()
 
 	if event.is_action_pressed("Shoot"):
 		shoot()
 
 	set_collision_mask_value(6, !event.is_action_pressed("Down"))
+
+
+func can_extra_jump() -> bool:
+	return !is_on_floor() and jump_count <= extra_jump_count
 
 
 func _physics_process(delta):
@@ -40,7 +46,6 @@ func _physics_process(delta):
 
 	if jump_count > 0 and is_on_floor_only():
 		jump_count = 0
-		print("jump reset")
 		animator.land()
 
 
@@ -51,7 +56,6 @@ func _get_gravity() -> float:
 func jump():
 	velocity.y = jump_velocity
 	jump_count += 1
-	print(jump_count)
 	animator.jump()
 
 
@@ -64,11 +68,12 @@ func shoot():
 		ammo_count -= 1
 		GameManager.changeAmmo(ammo_count)
 
+
 func set_move_velocity():
 	if is_on_floor() == false:
 		pass
 
 	var direction: float = Input.get_axis("Left", "Right")
 	velocity.x = direction * move_speed
-	
+
 	animator.set_movement(velocity, is_on_floor())

@@ -14,9 +14,9 @@ func set_movement(velocity: Vector2, on_floor: bool) -> void:
 		return
 	
 	if velocity.x > 0:
-		_sprites_root.scale.x = 1
+		_sprites_root.scale.x = 1.4
 	elif velocity.x < 0:
-		_sprites_root.scale.x = -1
+		_sprites_root.scale.x = -1.4
 		
 	if velocity.x == 0.0:
 		_running = false

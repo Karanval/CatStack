@@ -278,10 +278,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BedHead"]
 shape = SubResource("RectangleShape2D_vofke")
 
-[node name="MonsterSpawner" parent="." instance=ExtResource("7_xebr5")]
-ground_spawn_locations = Array[Vector2]([Vector2(2055, 800)])
-air_spawn_locations = Array[Vector2]([Vector2(2055, 250), Vector2(2055, 400)])
-
 [node name="noise_makers" type="Node2D" parent="."]
 
 [node name="NoiseMonke" parent="noise_makers" instance=ExtResource("8_si31g")]
@@ -294,6 +290,10 @@ rotation = 0.0770276
 [node name="NoiseChicken2" parent="noise_makers" instance=ExtResource("9_mimag")]
 position = Vector2(1463, 796)
 rotation = 0.0770276
+
+[node name="MonsterSpawner" parent="." instance=ExtResource("7_xebr5")]
+ground_spawn_locations = Array[Vector2]([Vector2(2055, 800)])
+air_spawn_locations = Array[Vector2]([Vector2(2055, 250), Vector2(2055, 400)])
 
 [node name="BallJar" parent="." instance=ExtResource("10_ijr7e")]
 position = Vector2(1114, 148)

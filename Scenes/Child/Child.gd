@@ -40,7 +40,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		$CuddleTime.paused = true
 
 func _on_cuddle_time_timeout() -> void:
-	_change_sleep(CUDDLE_PER_SECOND/_CUDDLE_UPDATES_PER_SECOND)
+	_change_sleep(int(CUDDLE_PER_SECOND/_CUDDLE_UPDATES_PER_SECOND))
 
 ### DEBUG FEATURE
 func _input(event: InputEvent) -> void:

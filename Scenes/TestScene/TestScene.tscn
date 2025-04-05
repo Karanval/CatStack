@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://0prw0oi6d0sx" path="res://Scenes/Room.tscn" id="1_qsb0u"]
 [ext_resource type="PackedScene" uid="uid://vv76aw14qh3n" path="res://Scenes/SleepBar/SleepBar.tscn" id="2_bsxja"]
+[ext_resource type="PackedScene" uid="uid://dnimq36cs47g6" path="res://player/Player.tscn" id="3_bsxja"]
 [ext_resource type="PackedScene" uid="uid://d2h6k3u68wvus" path="res://Scenes/Bullet/Bullet.tscn" id="3_bsxja"]
 
 [node name="TestScene" type="Node2D"]
@@ -9,6 +10,9 @@
 [node name="Room" parent="." instance=ExtResource("1_qsb0u")]
 
 [node name="SleepBar" parent="." instance=ExtResource("2_bsxja")]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("3_bsxja")]
+position = Vector2(802, 686)
 
 [node name="Bullet" parent="." instance=ExtResource("3_bsxja")]
 position = Vector2(88, 751)

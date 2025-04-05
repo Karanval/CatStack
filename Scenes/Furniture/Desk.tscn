@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhdcd2gdd7k3o"]
+
+[ext_resource type="Texture2D" uid="uid://dblr5vkl1hp5j" path="res://graphics/room_layout_sketch.png" id="1_670vp"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jf44d"]
+size = Vector2(400, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmsyb"]
+size = Vector2(700, 250)
+
+[node name="Desk" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_jf44d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_gmsyb")
+
+[node name="RoomLayoutSketch" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(-121, -211)
+texture = ExtResource("1_670vp")

@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://debk3xwn0o52v"]
+
+[ext_resource type="Texture2D" uid="uid://cni1orvkt845i" path="res://graphics/items/noise_chicken.png" id="1_r4jct"]
+[ext_resource type="Script" uid="uid://bxbeuacwkqeox" path="res://Scenes/Items/NoiseMaker.gd" id="2_euqfs"]
+[ext_resource type="Texture2D" uid="uid://b0afhgus1k6yg" path="res://graphics/icons/noise.png" id="3_s4w7i"]
+
+[sub_resource type="Animation" id="Animation_48eyf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.98572]
+}
+
+[sub_resource type="Animation" id="Animation_7vrei"]
+resource_name = "noise"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wssf"]
+_data = {
+&"RESET": SubResource("Animation_48eyf"),
+&"noise": SubResource("Animation_7vrei")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48eyf"]
+radius = 21.4286
+height = 130.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NoiseChicekn" type="Sprite2D" parent="." node_paths=PackedStringArray("_area", "_noise", "_noise_timer")]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_r4jct")
+script = ExtResource("2_euqfs")
+_area = NodePath("Area2D")
+_noise = NodePath("NoiseIcon")
+_noise_timer = NodePath("Timer")
+
+[node name="NoiseIcon" type="Sprite2D" parent="NoiseChicekn"]
+visible = false
+position = Vector2(0, -78.571)
+rotation = -0.98572
+texture = ExtResource("3_s4w7i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NoiseChicekn/NoiseIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_1wssf")
+}
+autoplay = "noise"
+
+[node name="Area2D" type="Area2D" parent="NoiseChicekn"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoiseChicekn/Area2D"]
+rotation = 1.57482
+shape = SubResource("CapsuleShape2D_48eyf")
+
+[node name="Timer" type="Timer" parent="NoiseChicekn"]
+wait_time = 2.0

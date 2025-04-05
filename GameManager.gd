@@ -1,7 +1,9 @@
 extends Node
 
 @export var MAX_SLEEP := 100
+@export var MAX_AMMO := 15
 
+var _ammo: int
 var _sleep: int
 
 var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
@@ -12,6 +14,8 @@ signal game_over
 
 func _init():
 	_sleep = MAX_SLEEP
+	_ammo = MAX_AMMO
+	setAmmo(_ammo)
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func _notification(what: int) -> void:
@@ -32,8 +36,20 @@ func changeSleep(change: int):
 		_switch_to_game_over_screen()
 	emit_signal("sleep_changed", _sleep)
 
-func changeAmmo(ammoValue: int):
-	emit_signal("ammo_changed", ammoValue)
+func changeAmmo(change: int):
+	_ammo += change
+	if _ammo > MAX_AMMO:
+		_ammo = MAX_AMMO
+	if _ammo <= 0:
+		_ammo = 0
+	setAmmo(_ammo)
+	
+func setAmmo(ammoValue: int):
+	_ammo = ammoValue
+	emit_signal("ammo_changed", _ammo)
+
+func getAmmo() -> int:
+	return _ammo
 	
 func _switch_to_game_over_screen():
 	#get_node("/root/TestScene").free()

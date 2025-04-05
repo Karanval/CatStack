@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv67nbn75bg1i"]
+
+[ext_resource type="Texture2D" uid="uid://cyxjaj8y2lb1p" path="res://graphics/items/balls_full_1.png" id="1_srx52"]
+[ext_resource type="Script" uid="uid://cheaosv47t5to" path="res://Scenes/BallJar/BallJar.gd" id="1_vqbll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2jh0"]
+size = Vector2(200, 203)
+
+[node name="BallJar" type="Node2D"]
+script = ExtResource("1_vqbll")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 28)
+scale = Vector2(0.885, 0.885)
+texture = ExtResource("1_srx52")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 26.5)
+shape = SubResource("RectangleShape2D_i2jh0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

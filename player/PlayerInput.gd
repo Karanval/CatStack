@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var jump_height: int = 100
 @export var jump_time_to_peak: float = 0.5
 @export var jump_time_to_descent: float = 0.4
+@export var animator : PlayerAnimator
 
 @onready var jump_velocity: float = (2 * jump_height) / jump_time_to_peak * -1
 @onready var jump_gravity: float = (-2 * jump_height) / (jump_time_to_peak * jump_time_to_peak) * -1
@@ -35,6 +36,7 @@ func _physics_process(delta):
 	if jump_count > 0 and is_on_floor_only():
 		jump_count = 0
 		print("jump reset")
+		animator.land()
 
 
 func _get_gravity() -> float:
@@ -45,6 +47,7 @@ func jump():
 	velocity.y = jump_velocity
 	jump_count += 1
 	print(jump_count)
+	animator.jump()
 
 
 func shoot():
@@ -60,3 +63,5 @@ func set_move_velocity():
 
 	var direction: float = Input.get_axis("Left", "Right")
 	velocity.x = direction * move_speed
+	
+	animator.set_movement(velocity, is_on_floor())

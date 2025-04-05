@@ -5,7 +5,7 @@ var movementTime := 0.0
 var direction: Vector2
 
 func _ready() -> void:
-	direction = (global_position - target.global_position).normalized()
+	direction = (global_position - target).normalized()
 	
 func get_velocity(delta: float):
 	movementTime += delta

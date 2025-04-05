@@ -11,7 +11,7 @@ enum MonsterState {
 	DISTURBING
 }
 
-@export var target: Node2D
+@export var target := Vector2(174, 734)
 @export var damage := 10
 @export var health := HEALTH
 @export var speed_modifier := 1

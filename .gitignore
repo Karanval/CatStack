@@ -16,3 +16,6 @@ mono_crash.*.json
 
 # JetBrains
 .idea/
+
+# Build/export artifacts
+build_artifacts/

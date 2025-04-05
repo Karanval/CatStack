@@ -4,17 +4,21 @@
 [ext_resource type="Script" uid="uid://bo0kqwcq8s5w7" path="res://Scenes/Monsters/ghost_monster.gd" id="1_ltl8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltl8p"]
-radius = 82.0
-height = 250.0
+radius = 52.0
+height = 132.0
 
 [node name="GhostMonster" type="RigidBody2D" groups=["monsters"]]
 collision_layer = 4
+collision_mask = 16
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_ltl8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.694118)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_3xbhu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 3)
+position = Vector2(-7, -1)
 shape = SubResource("CapsuleShape2D_ltl8p")

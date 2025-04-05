@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=21 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="PackedScene" uid="uid://cofp715asgg2m" path="res://Scenes/Child/Child.tscn" id="2_7gm67"]
 [ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dblr5vkl1hp5j" path="res://graphics/room_layout_sketch.png" id="4_a2si3"]
 [ext_resource type="PackedScene" uid="uid://co5y4sfs0kysd" path="res://Scenes/Furniture/ShelfSmall.tscn" id="4_aaq88"]
 [ext_resource type="PackedScene" uid="uid://dvnykwmrnn8ro" path="res://Scenes/Furniture/ShelfLarge.tscn" id="5_7gm67"]
+[ext_resource type="PackedScene" uid="uid://hefjpvbwdrbx" path="res://Scenes/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="7_xebr5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2si3"]
 size = Vector2(464, 27)
@@ -252,3 +253,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BedHead"]
 shape = SubResource("RectangleShape2D_vofke")
+
+[node name="MonsterSpawner" parent="." instance=ExtResource("7_xebr5")]
+ground_spawn_locations = Array[Vector2]([Vector2(1800, 800)])
+air_spawn_locations = Array[Vector2]([Vector2(2055, 250), Vector2(2055, 400)])

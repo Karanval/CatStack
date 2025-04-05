@@ -3,7 +3,7 @@ extends Node2D
 @export var MAX_SLEEP: int
 @export var CUDDLE_PER_SECOND: int
 
-const _CUDDLE_UPDATES_PER_SECOND: int = 10
+const _CUDDLE_UPDATES_PER_SECOND: float = 10
 
 var _sleep: int
 var _cuddle: bool
@@ -23,21 +23,21 @@ func _change_sleep(amount: int) -> void:
 		_sleep = MAX_SLEEP
 	if _sleep <= 0:
 		_sleep = 0
-		emit_signal("wake_up")
 		
 	emit_signal("sleep_changed",_sleep)
 	GameManager.changeSleep(_sleep)
 		
-# Monster reaches the child
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-
 # Player cuddles with the child
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$CuddleTime.paused = false
+	if body.is_in_group("monsters"):
+		var monster = body as BaseMonster
+		_change_sleep(-monster.damage)
+	else:
+		$CuddleTime.paused = false
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	$CuddleTime.paused = true
+	if !(body.is_in_group("monsters")):
+		$CuddleTime.paused = true
 
 func _on_cuddle_time_timeout() -> void:
 	_change_sleep(CUDDLE_PER_SECOND/_CUDDLE_UPDATES_PER_SECOND)

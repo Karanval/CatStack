@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://hefjpvbwdrbx"]
+
+[ext_resource type="Script" uid="uid://bvepnnpiicpqc" path="res://Scenes/Monsters/MonsterSpawner/monster_spawner.gd" id="1_np5ma"]
+[ext_resource type="PackedScene" uid="uid://dn4f7ugv7hbev" path="res://Scenes/Monsters/BasicMonster.tscn" id="2_52sog"]
+[ext_resource type="PackedScene" uid="uid://cooywnqcvqedy" path="res://Scenes/Monsters/GhostMonster.tscn" id="3_qn3sm"]
+
+[node name="MonsterSpawner" type="Node2D"]
+script = ExtResource("1_np5ma")
+basicMonster = ExtResource("2_52sog")
+ghostMonster = ExtResource("3_qn3sm")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

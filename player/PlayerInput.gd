@@ -9,10 +9,19 @@ extends CharacterBody2D
 @onready var jump_gravity: float = (-2 * jump_height) / (jump_time_to_peak * jump_time_to_peak) * -1
 @onready var fall_gravity: float = (-2 * jump_height) / (jump_time_to_descent* jump_time_to_descent) * -1
 
+var bullet_scene: PackedScene = preload("res://Scenes/Bullet/Bullet.tscn")
+
+@export var extra_jump_count: int = 1 # How many extra jumps the player is allowed after jumping from a surface (1 is double jump)
+
+var jump_count: int = 0
+
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Jump"):
+	if event.is_action_pressed("Jump") and (is_on_floor() or (!is_on_floor() and jump_count <= extra_jump_count)):
 		jump()
+
+	if event.is_action_pressed("Shoot"):
+		shoot()
 
 	set_collision_mask_value(6, !event.is_action_pressed("Down"))
 
@@ -23,6 +32,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+	if jump_count > 0 and is_on_floor_only():
+		jump_count = 0
+		print("jump reset")
+
 
 func _get_gravity() -> float:
 	return jump_gravity if velocity.y <= 0 else fall_gravity
@@ -30,6 +43,15 @@ func _get_gravity() -> float:
 
 func jump():
 	velocity.y = jump_velocity
+	jump_count += 1
+	print(jump_count)
+
+
+func shoot():
+	var bullet: Node = bullet_scene.instantiate()
+	bullet.DIRECTION = get_viewport().get_mouse_position() - position
+	bullet.START_POSITION = position
+	get_parent().add_child(bullet)
 
 
 func set_move_velocity():

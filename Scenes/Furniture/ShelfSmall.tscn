@@ -1,7 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://co5y4sfs0kysd"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w1x5d"]
-size = Vector2(165, 25)
+[ext_resource type="Texture2D" uid="uid://bs3h0gqucauef" path="res://graphics/room/shelf_2.png" id="1_53cae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7upr"]
 size = Vector2(166, 26)
@@ -9,7 +8,9 @@ size = Vector2(166, 26)
 [node name="ShelfSmall" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_w1x5d")
+position = Vector2(0, 23.155)
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("1_53cae")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

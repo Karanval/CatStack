@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dnimq36cs47g6"]
+[gd_scene load_steps=32 format=3 uid="uid://dnimq36cs47g6"]
 
 [ext_resource type="Script" uid="uid://cmyv8hg714icu" path="res://player/PlayerInput.gd" id="1_3c3w1"]
 [ext_resource type="Texture2D" uid="uid://wunmuyana421" path="res://graphics/main_character/mc_back_arm.png" id="2_gskgj"]
@@ -757,6 +757,9 @@ _data = {
 &"walk": SubResource("Animation_mhpjh")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5qrx2"]
+animation = &"idle"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mhpjh"]
 animation = &"falling"
 
@@ -766,7 +769,7 @@ animation = &"jump"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_v4f8b"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_t8epa"]
-graph_offset = Vector2(-689.759, 122.135)
+graph_offset = Vector2(-434, 0.666667)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_d4g0h")
 nodes/Animation/position = Vector2(-280, 60)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_mhpjh")
@@ -774,9 +777,6 @@ nodes/Animation/position = Vector2(-280, 60)
 nodes/Jump/node = SubResource("AnimationNodeBlend2_v4f8b")
 nodes/Jump/position = Vector2(-20, 120)
 node_connections = [&"Jump", 0, &"Animation", &"Jump", 1, &"Animation 2", &"output", 0, &"Jump"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5qrx2"]
-animation = &"idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hbkom"]
 animation = &"run"
@@ -800,15 +800,23 @@ advance_condition = &"jump"
 advance_mode = 2
 advance_condition = &"on_floor"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mhpjh"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ndjxb"]
+advance_mode = 2
+advance_condition = &"on_floor"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_q6miu"]
-states/BlendTree/node = SubResource("AnimationNodeBlendTree_t8epa")
-states/BlendTree/position = Vector2(402, 229)
 states/Start/position = Vector2(244, 87)
 states/idle/node = SubResource("AnimationNodeAnimation_5qrx2")
 states/idle/position = Vector2(402, 87)
+states/jump/node = SubResource("AnimationNodeBlendTree_t8epa")
+states/jump/position = Vector2(402, 229)
 states/run/node = SubResource("AnimationNodeAnimation_hbkom")
 states/run/position = Vector2(737, 87)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_d4g0h"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_v4f8b"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_t8epa"), "idle", "BlendTree", SubResource("AnimationNodeStateMachineTransition_5qrx2"), "BlendTree", "idle", SubResource("AnimationNodeStateMachineTransition_b32pr")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_d4g0h"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_v4f8b"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_t8epa"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_5qrx2"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_b32pr"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_mhpjh"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ndjxb")]
 graph_offset = Vector2(29, -8)
 
 [node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
@@ -833,16 +841,18 @@ libraries = {
 &"": SubResource("AnimationLibrary_b32pr")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="." node_paths=PackedStringArray("_sprites_root")]
+[node name="AnimationTree" type="AnimationTree" parent="." node_paths=PackedStringArray("_sprites_root", "_animation_player")]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_q6miu")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/jump = false
 parameters/conditions/on_floor = false
 parameters/conditions/run = false
 parameters/conditions/to_idle = false
-parameters/BlendTree/Jump/blend_amount = 1.0
+parameters/jump/Jump/blend_amount = 1.0
 script = ExtResource("2_ndjxb")
 _sprites_root = NodePath("../sprites")
+_animation_player = NodePath("../AnimationPlayer")
 
 [node name="sprites" type="Node2D" parent="."]
 scale = Vector2(-1, 1)

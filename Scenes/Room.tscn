@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=22 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="Texture2D" uid="uid://pgyf3sjlabiq" path="res://graphics/room/static_room.png" id="1_7gm67"]
+[ext_resource type="Texture2D" uid="uid://da03erc4l1ogv" path="res://graphics/room/wallpaper.png" id="1_xebr5"]
 [ext_resource type="PackedScene" uid="uid://cofp715asgg2m" path="res://Scenes/Child/Child.tscn" id="2_7gm67"]
 [ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
 [ext_resource type="PackedScene" uid="uid://co5y4sfs0kysd" path="res://Scenes/Furniture/ShelfSmall.tscn" id="4_aaq88"]
@@ -50,6 +51,10 @@ size = Vector2(367, 20)
 size = Vector2(131, 151)
 
 [node name="Room" type="Node2D"]
+
+[node name="Wallpaper" type="Sprite2D" parent="."]
+position = Vector2(961, 631)
+texture = ExtResource("1_xebr5")
 
 [node name="RoomLayoutSketch" type="Sprite2D" parent="."]
 position = Vector2(960, 630)

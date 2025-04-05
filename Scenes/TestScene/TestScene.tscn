@@ -12,10 +12,10 @@
 [node name="SleepBar" parent="." instance=ExtResource("2_bsxja")]
 
 [node name="AmmoCounter" parent="." instance=ExtResource("3_dl6we")]
-offset_left = 967.0
-offset_top = -14.0
-offset_right = 1067.0
-offset_bottom = 86.0
+offset_left = 969.0
+offset_top = 3.0
+offset_right = 1069.0
+offset_bottom = 103.0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_dl6we")]
 position = Vector2(164, 729)

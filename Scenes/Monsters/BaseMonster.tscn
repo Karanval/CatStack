@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bvybd7o14ac1m" path="res://Scenes/Monsters/BaseMonster.gd" id="1_g7i1x"]
 
-[node name="BaseMonster" type="RigidBody2D"]
+[node name="BaseMonster" type="RigidBody2D" groups=["monsters"]]
 script = ExtResource("1_g7i1x")
+target = Vector2(185, 695)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 

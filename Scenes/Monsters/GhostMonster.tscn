@@ -10,6 +10,7 @@ height = 132.0
 [node name="GhostMonster" type="RigidBody2D" groups=["monsters"]]
 collision_layer = 4
 collision_mask = 16
+mass = 50.0
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_ltl8p")

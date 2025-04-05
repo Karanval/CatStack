@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @export var move_speed: int = 400
 @export var jump_height: int = 100
-@export var max_ammo: int = 15
 @export var jump_time_to_peak: float = 0.5
 @export var jump_time_to_descent: float = 0.4
 @export var animator: PlayerAnimator
@@ -16,13 +15,9 @@ var bullet_scene: PackedScene = preload("res://Scenes/Bullet/GravityBullet.tscn"
 @export var extra_jump_count: int = 1 # How many extra jumps the player is allowed after jumping from a surface (1 is double jump)
 
 var jump_count: int = 0
-var ammo_count: int
-
 
 func _ready() -> void:
-	ammo_count = max_ammo
-	GameManager.changeAmmo(ammo_count)
-
+	GameManager.changeAmmo(1)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Jump") and (is_on_floor() or can_extra_jump()):
@@ -63,13 +58,12 @@ func jump():
 
 
 func shoot():
-	if ammo_count > 0:
+	if GameManager.getAmmo() > 0:
 		var bullet: Node = bullet_scene.instantiate()
 		bullet.DIRECTION = get_viewport().get_mouse_position() - position
 		bullet.START_POSITION = position
 		get_parent().add_child(bullet)
-		ammo_count -= 1
-		GameManager.changeAmmo(ammo_count)
+		GameManager.changeAmmo(-1)
 
 
 func set_move_velocity():

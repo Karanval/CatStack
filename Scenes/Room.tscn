@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=26 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="Texture2D" uid="uid://pgyf3sjlabiq" path="res://graphics/room/static_room.png" id="1_7gm67"]
 [ext_resource type="Texture2D" uid="uid://da03erc4l1ogv" path="res://graphics/room/wallpaper.png" id="1_xebr5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://hefjpvbwdrbx" path="res://Scenes/Monsters/MonsterSpawner/MonsterSpawner.tscn" id="7_xebr5"]
 [ext_resource type="PackedScene" uid="uid://d0fu2afheeg0n" path="res://Scenes/Items/noise_monke.tscn" id="8_si31g"]
 [ext_resource type="PackedScene" uid="uid://debk3xwn0o52v" path="res://Scenes/Items/noise_chicken.tscn" id="9_mimag"]
+[ext_resource type="PackedScene" uid="uid://cv67nbn75bg1i" path="res://Scenes/BallJar/BallJar.tscn" id="10_ijr7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2si3"]
 size = Vector2(464, 27)
@@ -293,3 +294,7 @@ rotation = 0.0770276
 [node name="NoiseChicken2" parent="noise_makers" instance=ExtResource("9_mimag")]
 position = Vector2(1463, 796)
 rotation = 0.0770276
+
+[node name="BallJar" parent="." instance=ExtResource("10_ijr7e")]
+position = Vector2(1114, 148)
+scale = Vector2(0.559995, 0.559999)

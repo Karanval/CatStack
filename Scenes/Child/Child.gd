@@ -23,6 +23,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("monsters"):
 		var monster = body as BaseMonster
 		_change_sleep(-monster.damage)
+		monster.call_deferred("cause_disturbance")
 	else:
 		$CuddleTime.paused = false
 

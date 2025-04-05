@@ -35,8 +35,22 @@ func take_damage(damage: int):
 	else:
 		damage_tween = create_tween()
 		damage_tween.tween_property($Sprite2D, "modulate", Color.PURPLE, 0.1)
-		damage_tween.tween_property($Sprite2D, "modulate", modulate, 0.1)
-		
+		damage_tween.tween_property($Sprite2D, "modulate", $Sprite2D.modulate, 0.1)
+
+func cause_disturbance():
+	state = MonsterState.DISTURBING
+	freeze = true
+	set_collision_layer_value(3, false)
+	
+	if damage_tween:
+		damage_tween.kill()
+	damage_tween = create_tween()
+	damage_tween.tween_property($Sprite2D, "modulate", Color.DARK_RED, 0.3)
+	damage_tween.tween_property($Sprite2D, "modulate", Color.TRANSPARENT, 0.6)
+	damage_tween.parallel().tween_property($Sprite2D, "scale", Vector2.ZERO, 0.5).set_ease(Tween.EASE_IN)
+	damage_tween.parallel().tween_property($Sprite2D, "rotation", 600, 0.5).set_ease(Tween.EASE_IN)
+	damage_tween.parallel().tween_property(self, "global_position", target, 0.6)
+	damage_tween.tween_callback(queue_free)
 
 func _physics_process(delta: float) -> void:
 	if state == MonsterState.MOVING:

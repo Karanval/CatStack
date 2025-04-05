@@ -19,5 +19,7 @@ func _physics_process(delta: float) -> void:
 
 # Bullet hits a monster
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	var monster := body as BaseMonster
+	monster.take_damage(DAMAGE)
 	emit_signal("damage_inflicted", body, DAMAGE)
-	queue_free()
+	call_deferred("queue_free")

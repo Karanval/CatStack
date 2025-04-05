@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8y38h51ebmw0"]
+
+[ext_resource type="PackedScene" uid="uid://v2djrjyyjk6h" path="res://Scenes/GameOver/GameOverOverlay.tscn" id="1_qwnta"]
+[ext_resource type="Script" uid="uid://c0wfn18okhxhp" path="res://Scenes/GameOver/GameOver.gd" id="1_ybu6n"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_ybu6n")
+
+[node name="GameOverOverlay" parent="." instance=ExtResource("1_qwnta")]
+offset_top = 6.10352e-05
+offset_right = 1980.0
+offset_bottom = 1200.0
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 729.0
+offset_top = 717.0
+offset_right = 794.0
+offset_bottom = 748.0
+scale = Vector2(8.86788, 5.75808)
+text = "Restart"
+expand_icon = true
+
+[connection signal="button_down" from="RestartButton" to="." method="_on_restart_button_button_down"]

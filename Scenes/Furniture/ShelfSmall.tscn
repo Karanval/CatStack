@@ -4,7 +4,7 @@
 size = Vector2(165, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7upr"]
-size = Vector2(1.03266, 0.806202)
+size = Vector2(166, 26)
 
 [node name="ShelfSmall" type="Node2D"]
 
@@ -12,9 +12,8 @@ size = Vector2(1.03266, 0.806202)
 texture = SubResource("PlaceholderTexture2D_w1x5d")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(160.75, 32.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-2.72531e-08, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e7upr")
+one_way_collision = true

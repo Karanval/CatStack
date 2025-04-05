@@ -18,4 +18,4 @@ DIRECTION = Vector2(1, 0)
 SPEED = 1000
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_dl6we")]
-position = Vector2(829, 687)
+position = Vector2(164, 729)

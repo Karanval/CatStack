@@ -10,59 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cats4fymvdt4h" path="res://cats/sprites/orange_cat/back_ear.png" id="8_jepa5"]
 [ext_resource type="Texture2D" uid="uid://b0p0n1fpa4bpw" path="res://cats/sprites/orange_cat/tail.png" id="9_offwh"]
 
-[sub_resource type="Animation" id="Animation_ed8f5"]
-resource_name = "idle_sleep"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("tail:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.34964, 3.16667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -0.277366, 0.299771]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("tail:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.34964, 3.16667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-172, 190), Vector2(-125, 173), Vector2(-224, 190)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("head/f_ear:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.00386, 1.16667, 1.33333, 1.5, 1.66667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-60, -72), Vector2(-54, -74), Vector2(-60, -72), Vector2(-54, -74), Vector2(-60, -72)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("head/f_ear:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.00386, 1.16667, 1.33333, 1.5, 1.66667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.128191, 0.0, 0.128191, 0.0]
-}
-
 [sub_resource type="Animation" id="Animation_sep8r"]
 length = 0.001
 tracks/0/type = "value"
@@ -124,6 +71,59 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("6_02g1y")]
+}
+
+[sub_resource type="Animation" id="Animation_ed8f5"]
+resource_name = "idle_sleep"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tail:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.34964, 3.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.277366, 0.299771]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tail:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.34964, 3.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-172, 190), Vector2(-125, 173), Vector2(-224, 190)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head/f_ear:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.00386, 1.16667, 1.33333, 1.5, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-60, -72), Vector2(-54, -74), Vector2(-60, -72), Vector2(-54, -74), Vector2(-60, -72)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("head/f_ear:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.00386, 1.16667, 1.33333, 1.5, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.128191, 0.0, 0.128191, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_fgj2n"]

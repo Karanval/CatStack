@@ -17,6 +17,7 @@ texture = SubResource("PlaceholderTexture2D_jf44d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_gmsyb")
+one_way_collision = true
 
 [node name="RoomLayoutSketch" type="Sprite2D" parent="StaticBody2D"]
 modulate = Color(1, 1, 1, 0.286275)

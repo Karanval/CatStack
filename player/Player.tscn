@@ -10,7 +10,7 @@ height = 120.0
 [node name="PlayerCharacter" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
-collision_mask = 45
+collision_mask = 41
 script = ExtResource("1_3c3w1")
 jump_height = 130
 jump_time_to_peak = 0.35

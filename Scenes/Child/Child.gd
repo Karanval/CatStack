@@ -23,7 +23,6 @@ func _change_sleep(amount: int) -> void:
 		_sleep = MAX_SLEEP
 	if _sleep <= 0:
 		_sleep = 0
-		emit_signal("wake_up")
 		
 	emit_signal("sleep_changed",_sleep)
 	GameManager.changeSleep(_sleep)

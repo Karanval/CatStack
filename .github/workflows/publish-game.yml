@@ -1,3 +1,5 @@
+name: Publish game to itch.io
+
 on:
   push:
     branches:
@@ -25,7 +27,9 @@ jobs:
           include-templates: true
 
       - name: Build game
-        run: godot --headless --export-release "Web"
+        run: |
+          mkdir build_artifacts/${{ matrix.channel }}
+          godot --headless --export-release "Web"
 
       - name: Upload to itch.io
         uses: KikimoraGames/itch-publish@v0.0.3

@@ -25,9 +25,7 @@ func _on_body_entered(body: Node) -> void:
 	if not monster:
 		return
 	set_collision_mask_value(3, false)
-	
 	monster.take_damage(DAMAGE)
-	print("Hit a monster")
 
 func _on_destroy_timer_timeout() -> void:
 	call_deferred("queue_free")

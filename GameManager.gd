@@ -52,6 +52,7 @@ func getAmmo() -> int:
 	return _ammo
 	
 func _switch_to_game_over_screen():
+	_init()
 	#get_node("/root/TestScene").free()
 	var root  = get_tree().root
 	var level = root.get_node("TestScene")

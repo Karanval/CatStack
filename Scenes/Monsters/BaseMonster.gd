@@ -16,27 +16,27 @@ enum MonsterState {
 @export var health := HEALTH
 @export var speed_modifier := 1
 
-#var tween: Tween
+var damage_tween: Tween
 var state := MonsterState.MOVING
 
 func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 1
-	#var modulate_color = modulate
-	#tween = create_tween()
-	#tween.pause()
-	#tween.tween_property($Sprite, "modulate", Color.RED, 0.2)
-	#tween.tween_property($Sprite, "modulate", modulate_color, 0.2)
 	
 func take_damage(damage: int):
 	health -= damage
-	#tween.play()
+	if damage_tween:
+		damage_tween.kill()
+	
 	if health <= 0:
-		#var tween = get_tree().create_tween()
-		#tween.tween_property($Sprite, "modulate", Color.RED, 1).set_trans(Tween.TRANS_SINE)
-		#tween.tween_property($Sprite, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
-		#tween.tween_callback($Sprite.queue_free)
-		call_deferred("queue_free")
+		damage_tween = create_tween()
+		damage_tween.tween_property($Sprite2D, "modulate", Color.TRANSPARENT, 0.1)
+		damage_tween.tween_callback(queue_free)
+	else:
+		damage_tween = create_tween()
+		damage_tween.tween_property($Sprite2D, "modulate", Color.PURPLE, 0.1)
+		damage_tween.tween_property($Sprite2D, "modulate", modulate, 0.1)
+		
 
 func _physics_process(delta: float) -> void:
 	if state == MonsterState.MOVING:

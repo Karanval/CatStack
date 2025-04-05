@@ -75,6 +75,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WindowSillBottom"]
 position = Vector2(155, 6.5)
 shape = SubResource("RectangleShape2D_a2si3")
+one_way_collision = true
 
 [node name="WindowSillTop" type="StaticBody2D" parent="Collisions"]
 position = Vector2(375, 382)
@@ -83,6 +84,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/WindowSillTop"]
 position = Vector2(155, 6.5)
 shape = SubResource("RectangleShape2D_aaq88")
+one_way_collision = true
 
 [node name="Desk" type="StaticBody2D" parent="Collisions"]
 position = Vector2(1252, 765)
@@ -91,6 +93,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Desk"]
 position = Vector2(-178, 8)
 shape = SubResource("RectangleShape2D_7gm67")
+one_way_collision = true
 
 [node name="Floor" type="StaticBody2D" parent="Collisions"]
 position = Vector2(804, 948)
@@ -120,6 +123,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor1"]
 shape = SubResource("RectangleShape2D_ijr7e")
+one_way_collision = true
 
 [node name="BookshelfFloor2" type="StaticBody2D" parent="Collisions"]
 position = Vector2(1399, 740)
@@ -127,6 +131,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor2"]
 shape = SubResource("RectangleShape2D_ijr7e")
+one_way_collision = true
 
 [node name="BookshelfFloor3" type="StaticBody2D" parent="Collisions"]
 position = Vector2(1398, 652)
@@ -134,6 +139,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor3"]
 shape = SubResource("RectangleShape2D_ijr7e")
+one_way_collision = true
 
 [node name="BookshelfFloor4" type="StaticBody2D" parent="Collisions"]
 position = Vector2(1395, 535)
@@ -141,6 +147,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor4"]
 shape = SubResource("RectangleShape2D_ijr7e")
+one_way_collision = true
 
 [node name="BookshelfFloor5" type="StaticBody2D" parent="Collisions"]
 position = Vector2(1395, 432)
@@ -148,6 +155,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor5"]
 shape = SubResource("RectangleShape2D_ijr7e")
+one_way_collision = true
 
 [node name="BookshelfFloor6" type="StaticBody2D" parent="Collisions"]
 position = Vector2(1397, 322)
@@ -156,6 +164,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/BookshelfFloor6"]
 position = Vector2(54, 0)
 shape = SubResource("RectangleShape2D_khqja")
+one_way_collision = true
 
 [node name="Bed" type="StaticBody2D" parent="Collisions"]
 position = Vector2(63, 776)
@@ -164,6 +173,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Bed"]
 position = Vector2(218.5, 38)
 shape = SubResource("RectangleShape2D_l0f8h")
+one_way_collision = true
 
 [node name="BedHead" type="StaticBody2D" parent="Collisions"]
 position = Vector2(70, 752)

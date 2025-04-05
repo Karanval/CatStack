@@ -15,3 +15,4 @@ texture = SubResource("PlaceholderTexture2D_fvvy2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_plytk")
+one_way_collision = true

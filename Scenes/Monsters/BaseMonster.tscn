@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://pyl3oxaochjd"]
+
+[ext_resource type="Script" uid="uid://bvybd7o14ac1m" path="res://Scenes/Monsters/BaseMonster.gd" id="1_g7i1x"]
+
+[node name="BaseMonster" type="RigidBody2D"]
+script = ExtResource("1_g7i1x")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -25,7 +25,7 @@ jobs:
           include-templates: true
 
       - name: Build game
-        run: godot --export-release "Web"
+        run: godot --headless --export-release "Web"
 
       - name: Upload to itch.io
         uses: KikimoraGames/itch-publish@v0.0.3

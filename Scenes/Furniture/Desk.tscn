@@ -14,6 +14,8 @@ size = Vector2(700, 250)
 texture = SubResource("PlaceholderTexture2D_jf44d")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_gmsyb")

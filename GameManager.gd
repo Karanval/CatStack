@@ -10,6 +10,16 @@ func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Esc"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
 func changeSleep(sleepValue: int):
 	if sleepValue <= 0:
 		print("GAME OVER")

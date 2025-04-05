@@ -10,10 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dgnpxqs8eeof2" path="res://graphics/main_character/mc_head.png" id="7_b32pr"]
 [ext_resource type="Texture2D" uid="uid://b0h5t2f5tfumw" path="res://graphics/main_character/mc_neutral_face.png" id="8_06mnu"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnvi2"]
-radius = 30.0
-height = 120.0
-
 [sub_resource type="Animation" id="Animation_5qrx2"]
 length = 0.001
 tracks/0/type = "value"
@@ -1119,6 +1115,10 @@ states/run/position = Vector2(737, 87)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_d4g0h"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_v4f8b"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_t8epa"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_5qrx2"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_b32pr"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_mhpjh"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ndjxb")]
 graph_offset = Vector2(29, -8)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnvi2"]
+radius = 48.0
+height = 164.0
+
 [node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
@@ -1128,11 +1128,6 @@ jump_height = 130
 jump_time_to_peak = 0.35
 jump_time_to_descent = 0.25
 animator = NodePath("AnimationTree")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("CapsuleShape2D_wnvi2")
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1153,7 +1148,7 @@ _sprites_root = NodePath("../sprites")
 _animation_player = NodePath("../AnimationPlayer")
 
 [node name="sprites" type="Node2D" parent="."]
-scale = Vector2(-1, 1)
+scale = Vector2(-1.4, 1.4)
 
 [node name="b_arm" type="Sprite2D" parent="sprites"]
 self_modulate = Color(0.52549, 0.411765, 0.337255, 1)
@@ -1192,3 +1187,8 @@ self_modulate = Color(0.52549, 0.411765, 0.337255, 1)
 position = Vector2(0, 6)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_mhpjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_wnvi2")
+metadata/_edit_lock_ = true

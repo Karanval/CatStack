@@ -15,7 +15,6 @@
 position = Vector2(88, 751)
 DAMAGE = 2
 DIRECTION = Vector2(1, 0)
-SPEED = 1000
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_dl6we")]
 position = Vector2(164, 729)

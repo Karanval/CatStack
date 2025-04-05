@@ -28,16 +28,16 @@ func _change_sleep(amount: int) -> void:
 	emit_signal("sleep_changed",_sleep)
 	GameManager.changeSleep(_sleep)
 		
-# Monster reaches the child
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-
 # Player cuddles with the child
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$CuddleTime.paused = false
+	if body.is_in_group("monsters"):
+		_change_sleep(-10)
+	else:
+		$CuddleTime.paused = false
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	$CuddleTime.paused = true
+	if !(body.is_in_group("monsters")):
+		$CuddleTime.paused = true
 
 func _on_cuddle_time_timeout() -> void:
 	_change_sleep(CUDDLE_PER_SECOND/_CUDDLE_UPDATES_PER_SECOND)

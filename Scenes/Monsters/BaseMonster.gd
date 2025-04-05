@@ -35,7 +35,7 @@ func take_damage(damage: int):
 	else:
 		damage_tween = create_tween()
 		damage_tween.tween_property($Sprite2D, "modulate", Color.PURPLE, 0.1)
-		damage_tween.tween_property($Sprite2D, "modulate", modulate, 0.1)
+		damage_tween.tween_property($Sprite2D, "modulate", $Sprite2D.modulate, 0.1)
 
 func cause_disturbance():
 	state = MonsterState.DISTURBING

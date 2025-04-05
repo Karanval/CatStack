@@ -1,19 +1,24 @@
 extends Node
 
 var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
-
 signal sleep_changed
 signal game_over
-	
+
+
+func _init():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
+
 func changeSleep(sleepValue: int):
 	if sleepValue <= 0:
 		print("GAME OVER")
 		_switch_to_game_over_screen()
 	emit_signal("sleep_changed", sleepValue)
 
+
 func _switch_to_game_over_screen():
 	#get_node("/root/TestScene").free()
-	var root = get_tree().root
+	var root  = get_tree().root
 	var level = root.get_node("TestScene")
 	root.remove_child(level)
 	level.call_deferred("free")

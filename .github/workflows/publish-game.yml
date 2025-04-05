@@ -28,7 +28,7 @@ jobs:
 
       - name: Build game
         run: |
-          mkdir build_artifacts/${{ matrix.channel }}
+          mkdir -p build_artifacts/${{ matrix.channel }}
           godot --headless --export-release "Web"
 
       - name: Upload to itch.io

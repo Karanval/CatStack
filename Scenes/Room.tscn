@@ -136,6 +136,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/DrawersBottom"]
 position = Vector2(143, -1.5)
 shape = SubResource("RectangleShape2D_vtib3")
+one_way_collision = true
 
 [node name="Monitor" type="StaticBody2D" parent="Collisions"]
 position = Vector2(1218, 624)

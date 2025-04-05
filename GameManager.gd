@@ -2,6 +2,7 @@ extends Node
 
 var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
 signal sleep_changed
+signal ammo_changed
 signal game_over
 
 
@@ -15,7 +16,9 @@ func changeSleep(sleepValue: int):
 		_switch_to_game_over_screen()
 	emit_signal("sleep_changed", sleepValue)
 
-
+func changeAmmo(ammoValue: int):
+	emit_signal("ammo_changed", ammoValue)
+	
 func _switch_to_game_over_screen():
 	#get_node("/root/TestScene").free()
 	var root  = get_tree().root

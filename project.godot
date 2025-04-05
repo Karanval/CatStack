@@ -68,6 +68,7 @@ Shoot={
 2d_physics/layer_4="child"
 2d_physics/layer_5="player_bullets"
 2d_physics/layer_6="platforms"
+2d_physics/layer_7="walls"
 
 [rendering]
 

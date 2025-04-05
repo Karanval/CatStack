@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://0prw0oi6d0sx"]
+
+[ext_resource type="PackedScene" uid="uid://0vvckhobws5t" path="res://Scenes/Bed.tscn" id="1_uj218"]
+[ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Shelf.tscn" id="2_a2si3"]
+[ext_resource type="PackedScene" uid="uid://cd5q35knrsibt" path="res://Scenes/Drawers.tscn" id="3_aaq88"]
+
+[node name="Room" type="Node2D"]
+
+[node name="Furniture" type="Node2D" parent="."]
+
+[node name="Bed" parent="Furniture" instance=ExtResource("1_uj218")]
+position = Vector2(351, 952)
+
+[node name="Shelf" parent="Furniture" instance=ExtResource("2_a2si3")]
+position = Vector2(585, 474)
+
+[node name="Drawers" parent="Furniture" instance=ExtResource("3_aaq88")]
+position = Vector2(1063, 909)
+
+[node name="Shelf2" parent="Furniture" instance=ExtResource("2_a2si3")]
+position = Vector2(1416, 477)

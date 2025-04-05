@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=17 format=3 uid="uid://0prw0oi6d0sx"]
 
+[ext_resource type="PackedScene" uid="uid://cofp715asgg2m" path="res://Scenes/Child/Child.tscn" id="2_7gm67"]
 [ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
 [ext_resource type="PackedScene" uid="uid://cd5q35knrsibt" path="res://Scenes/Furniture/Drawers.tscn" id="3_aaq88"]
 [ext_resource type="Texture2D" uid="uid://dblr5vkl1hp5j" path="res://graphics/room_layout_sketch.png" id="4_a2si3"]
@@ -42,6 +43,9 @@ size = Vector2(131, 151)
 modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(960, 630)
 texture = ExtResource("4_a2si3")
+
+[node name="Child" parent="." instance=ExtResource("2_7gm67")]
+position = Vector2(171, 734)
 
 [node name="Furniture" type="Node2D" parent="."]
 

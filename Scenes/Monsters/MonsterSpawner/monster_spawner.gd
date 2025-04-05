@@ -1,12 +1,13 @@
 extends Node2D
 
-const TOTAL_MONSTERS := 2
+const TOTAL_MONSTERS := 3
 
 @export var timer_minimum := 1.0
 @export var timer_maximum := 3.0
 @export var ground_spawn_locations: Array[Vector2]
 @export var air_spawn_locations: Array[Vector2]
 @export var basicMonster: PackedScene
+@export var toddyMonster: PackedScene
 @export var ghostMonster: PackedScene
 
 func _ready() -> void:
@@ -21,7 +22,10 @@ func _on_timer_timeout() -> void:
 		0: 
 			instance = basicMonster.instantiate()
 			spawn_location = ground_spawn_locations[randi() % ground_spawn_locations.size()]
-		1: 
+		1:
+			instance = toddyMonster.instantiate()
+			spawn_location = ground_spawn_locations[randi() % ground_spawn_locations.size()]
+		2: 
 			instance = ghostMonster.instantiate()
 			spawn_location = air_spawn_locations[randi() % air_spawn_locations.size()]
 	

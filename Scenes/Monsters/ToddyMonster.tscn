@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://1pe1627se4j6"]
+
+[ext_resource type="PackedScene" uid="uid://pyl3oxaochjd" path="res://Scenes/Monsters/BaseMonster.tscn" id="1_h60py"]
+[ext_resource type="Script" uid="uid://b8abdobhivgo7" path="res://Scenes/Monsters/toddy_monster.gd" id="2_4ycof"]
+[ext_resource type="Texture2D" uid="uid://d34ou232n34la" path="res://graphics/nighmare_2.png" id="2_8pel2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ycof"]
+atlas = ExtResource("2_8pel2")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ac5vp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ycof")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tg3ts"]
+radius = 36.0
+height = 114.0
+
+[node name="BaseMonster" instance=ExtResource("1_h60py")]
+collision_layer = 4
+collision_mask = 17
+mass = 2.0
+lock_rotation = true
+script = ExtResource("2_4ycof")
+jump_chance = 0.333
+jump_cooldown_min = 1.0
+jump_cooldown_max = 3.0
+jump_pulse_min = 1000
+jump_pulse_max = 2000
+health = 50
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ac5vp")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-7, 1)
+shape = SubResource("CapsuleShape2D_tg3ts")

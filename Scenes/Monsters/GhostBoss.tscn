@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://6dakud4c41au"]
+
+[ext_resource type="PackedScene" uid="uid://pyl3oxaochjd" path="res://Scenes/Monsters/BaseMonster.tscn" id="1_tmyls"]
+[ext_resource type="Texture2D" uid="uid://br7f4qhmjgn2x" path="res://graphics/nighmare_3.png" id="2_2om51"]
+[ext_resource type="Script" uid="uid://cpdyjbqjpler2" path="res://Scenes/Monsters/ghost_boss.gd" id="2_rbtjq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbtjq"]
+atlas = ExtResource("2_2om51")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8cth"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbtjq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knq1k"]
+radius = 199.161
+
+[node name="BaseMonster" instance=ExtResource("1_tmyls")]
+collision_layer = 4
+collision_mask = 0
+mass = 100.0
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("2_rbtjq")
+sin_magnitude_min = 4
+sin_magnitude_max = 4
+sin_frequency_min = 2
+sin_frequency_max = 2
+damage = 60
+health = 1000
+speed_modifier = 0.4
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_p8cth")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_knq1k")

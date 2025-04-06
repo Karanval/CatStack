@@ -20,7 +20,6 @@ func _ready() -> void:
 	
 func _enter_tree() -> void:
 	direction = (global_position - target).normalized()
-	print(direction)
 	
 func get_velocity(delta: float):
 	movementTime += delta

@@ -3,16 +3,23 @@ extends Node2D
 const TOTAL_MONSTERS := 3
 
 @export var timer_minimum := 1.0
-@export var timer_maximum := 3.0
+@export var timer_maximum := 5.0
 @export var ground_spawn_locations: Array[Vector2]
 @export var air_spawn_locations: Array[Vector2]
 @export var basicMonster: PackedScene
 @export var toddyMonster: PackedScene
 @export var ghostMonster: PackedScene
 
+@onready var current_timer_minimum := timer_maximum
+var game_time := 0.0
+
 func _ready() -> void:
 	randomize()
 	reset_timer()
+	
+func _process(delta: float) -> void:
+	game_time += delta
+	current_timer_minimum = lerpf(timer_maximum, timer_minimum, game_time / GameManager.GAME_LENGTH )
 	
 func _on_timer_timeout() -> void:
 	var monster = randi() % TOTAL_MONSTERS
@@ -34,5 +41,5 @@ func _on_timer_timeout() -> void:
 	reset_timer()
 	
 func reset_timer():
-	$Timer.wait_time = randi_range(timer_minimum, timer_maximum)
+	$Timer.wait_time = randi_range(current_timer_minimum, timer_maximum)
 	$Timer.start()

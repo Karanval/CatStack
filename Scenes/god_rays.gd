@@ -2,7 +2,7 @@ extends Sprite2D
 
 func _ready() -> void:
 	var tween = create_tween()
-	tween.tween_method(set_shader_value, Color("#f3e1f500"), Color("#f3e1f5c8"), 300); # args are: (method to call / start value / end value / duration of animation)
+	tween.tween_method(set_shader_value, Color("#f3e1f500"), Color("#f3e1f5c8"), GameManager.GAME_LENGTH);
 
 
 # tween value automatically gets passed into this function

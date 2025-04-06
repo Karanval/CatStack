@@ -2,6 +2,7 @@ extends Node
 
 @export var MAX_SLEEP := 100
 @export var MAX_AMMO := 15
+@export var GAME_LENGTH := 120
 
 var _ammo: int
 var _sleep: int
@@ -10,7 +11,6 @@ var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
 signal sleep_changed
 signal ammo_changed
 signal game_over
-
 
 func _init():
 	_sleep = MAX_SLEEP

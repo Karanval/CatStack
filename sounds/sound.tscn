@@ -22,6 +22,6 @@ effects = Dictionary[int, AudioStream]({
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_1iar7")
-volume_db = -30.0
+volume_db = -20.0
 autoplay = true
 bus = &"Music"

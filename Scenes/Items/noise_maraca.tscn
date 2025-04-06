@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://bxbeuacwkqeox" path="res://Scenes/Items/NoiseMaker.gd" id="2_tesgw"]
 [ext_resource type="Texture2D" uid="uid://b0afhgus1k6yg" path="res://graphics/icons/noise.png" id="3_tdp14"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48eyf"]
+radius = 29.9998
+height = 114.296
+
 [sub_resource type="Animation" id="Animation_48eyf"]
 length = 0.001
 tracks/0/type = "value"
@@ -42,10 +46,6 @@ _data = {
 &"noise": SubResource("Animation_7vrei")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48eyf"]
-radius = 29.9998
-height = 114.296
-
 [node name="NoiseMaraca" type="Node2D"]
 
 [node name="NoiseMaraca" type="Sprite2D" parent="." node_paths=PackedStringArray("_area", "_noise", "_noise_timer")]
@@ -53,21 +53,9 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_vepe6")
 script = ExtResource("2_tesgw")
 _area = NodePath("Area2D")
-_noise = NodePath("NoiseIcon")
+_noise = NodePath("../NoiseIcon")
 _noise_timer = NodePath("Timer")
 _type = 2
-
-[node name="NoiseIcon" type="Sprite2D" parent="NoiseMaraca"]
-visible = false
-position = Vector2(0, -78.571)
-rotation = -0.98572
-texture = ExtResource("3_tdp14")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NoiseMaraca/NoiseIcon"]
-libraries = {
-&"": SubResource("AnimationLibrary_1wssf")
-}
-autoplay = "noise"
 
 [node name="Area2D" type="Area2D" parent="NoiseMaraca"]
 collision_mask = 2
@@ -79,3 +67,16 @@ shape = SubResource("CapsuleShape2D_48eyf")
 
 [node name="Timer" type="Timer" parent="NoiseMaraca"]
 wait_time = 2.0
+
+[node name="NoiseIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -54.9997)
+rotation = -0.98572
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_tdp14")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NoiseIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_1wssf")
+}
+autoplay = "noise"

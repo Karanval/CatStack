@@ -7,8 +7,6 @@ const _CUDDLE_UPDATES_PER_SECOND: float = 10
 var _sleep: int
 var _cuddle: bool
 
-signal sleep_changed
-
 func _ready() -> void:
 	_cuddle = false
 	GameManager.changeSleep(_sleep)

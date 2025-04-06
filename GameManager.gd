@@ -32,7 +32,7 @@ func _input(event: InputEvent) -> void:
 func changeSleep(change: int):
 	_sleep += change
 	if change < 0:
-		_changeScore(change)
+		changeScore(change)
 	if _sleep > MAX_SLEEP:
 		_sleep = MAX_SLEEP
 	if _sleep <= 0:
@@ -56,7 +56,7 @@ func setAmmo(ammoValue: int):
 func getAmmo() -> int:
 	return _ammo
 	
-func _changeScore(change: int):
+func changeScore(change: int):
 	_score += change
 	emit_signal("score_changed", _score)
 	
@@ -64,6 +64,12 @@ func resetScore():
 	_score = 0
 	emit_signal("score_changed", _score)
 	
+func getScore() -> int:
+	return _score
+	
+func endGame():
+	_switch_to_game_over_screen()
+	
 func _switch_to_game_over_screen():
 	_init()
-	get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/GameOver/GameOver.tscn")

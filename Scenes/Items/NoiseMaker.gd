@@ -9,6 +9,7 @@ extends Sprite2D
 enum Type{Chicken, Monke, Maraca}
 
 var _noising: bool =false
+var rotating_clockwise := true
 var _noise_type: Sound.Effect
 
 func _ready() -> void:
@@ -19,7 +20,17 @@ func _ready() -> void:
 	Sound.Effect.Monke if _type == Type.Monke else \
 	Sound.Effect.Maraca
 	
-
+func _process(delta: float) -> void:
+	if _noising:
+		if rotating_clockwise:
+			rotation += delta * 3
+			if rotation > 0.17:
+				rotating_clockwise = false
+		else:
+			rotation -= delta * 3
+			if rotation < -0.17:
+				rotating_clockwise = true
+		
 func activate_noise(_body: Node2D) -> void:
 	if _noising:
 		return
@@ -33,3 +44,5 @@ func activate_noise(_body: Node2D) -> void:
 func deactivate_noise() -> void:
 	_noise.hide()
 	_noising = false
+	rotation = 0
+	rotating_clockwise = true

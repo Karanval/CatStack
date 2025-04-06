@@ -1,6 +1,6 @@
 extends BaseMonster
 
-@export var jump_chance := 0.333
+@export var jump_chance := 0.5
 @export var jump_cooldown_min := 1.0
 @export var jump_cooldown_max := 3.0
 @export var jump_pulse_min := 5000

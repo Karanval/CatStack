@@ -1571,10 +1571,11 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 41
 script = ExtResource("1_3c3w1")
-jump_height = 130
+jump_height = 200
 jump_time_to_peak = 0.35
 jump_time_to_descent = 0.25
 animator = NodePath("AnimationTree")
+extra_jump_count = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

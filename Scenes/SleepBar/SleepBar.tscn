@@ -23,12 +23,15 @@ offset_bottom = 65.0
 theme_override_font_sizes/normal_font_size = 20
 text = "Score"
 
-[node name="ProgressBar" type="TextureProgressBar" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 7.0
-offset_right = 727.0
-offset_bottom = 77.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 15
+
+[node name="ProgressBar" type="TextureProgressBar" parent="MarginContainer"]
+layout_mode = 2
 value = 100.0
 stretch_margin_left = 5
 stretch_margin_top = 10

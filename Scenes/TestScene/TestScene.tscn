@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1866dsru0rjp"]
+[gd_scene load_steps=7 format=3 uid="uid://b1866dsru0rjp"]
 
 [ext_resource type="PackedScene" uid="uid://0prw0oi6d0sx" path="res://Scenes/Room.tscn" id="1_qsb0u"]
 [ext_resource type="PackedScene" uid="uid://vv76aw14qh3n" path="res://Scenes/SleepBar/SleepBar.tscn" id="2_bsxja"]
 [ext_resource type="PackedScene" uid="uid://cs60ejphnb730" path="res://Scenes/AmmoCounter/AmmoCounter.tscn" id="3_dl6we"]
 [ext_resource type="PackedScene" uid="uid://dnimq36cs47g6" path="res://Scenes/Player/Player.tscn" id="4_dl6we"]
 [ext_resource type="PackedScene" uid="uid://31vqfbpxo8vx" path="res://Scenes/GameCountdown/GameCountdown.tscn" id="5_w3lok"]
+[ext_resource type="PackedScene" uid="uid://c2g5kw6jrd66v" path="res://Scenes/controls_ui.tscn" id="6_dd4tm"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -39,3 +40,5 @@ offset_left = 1817.0
 offset_top = 24.0
 offset_right = 1817.0
 offset_bottom = 24.0
+
+[node name="Controls" parent="CanvasLayer" instance=ExtResource("6_dd4tm")]

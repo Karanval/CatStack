@@ -15,7 +15,7 @@ enum MonsterState {
 @export var target := Vector2(174, 734)
 @export var damage := 10
 @export var health := HEALTH
-@export var speed_modifier := 1
+@export var speed_modifier := 1.0
 
 var damage_tween: Tween
 var state := MonsterState.MOVING

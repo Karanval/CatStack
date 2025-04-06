@@ -9,6 +9,7 @@ const TOTAL_MONSTERS := 3
 @export var basicMonster: PackedScene
 @export var toddyMonster: PackedScene
 @export var ghostMonster: PackedScene
+@export var ghostBoss: PackedScene
 
 @onready var current_timer_minimum := timer_maximum
 var game_time := 0.0
@@ -22,6 +23,14 @@ func _process(delta: float) -> void:
 	current_timer_minimum = lerpf(timer_maximum, timer_minimum, game_time / GameManager.GAME_LENGTH )
 	
 func _on_timer_timeout() -> void:
+	if (GameManager.GAME_LENGTH - game_time <= 25):
+		var instance = ghostBoss.instantiate()
+		var spawn_location = air_spawn_locations[randi() % air_spawn_locations.size()]
+		instance.global_position = spawn_location
+		add_child(instance)
+		$Timer.stop()
+		return
+		
 	var monster = randi() % TOTAL_MONSTERS
 	var instance: BaseMonster
 	var spawn_location: Vector2

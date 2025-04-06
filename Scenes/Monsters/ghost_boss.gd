@@ -6,8 +6,8 @@ var direction: Vector2
 
 @export var sin_magnitude_min := 1
 @export var sin_magnitude_max := 3
-@export var sin_frequency_min := 3
-@export var sin_frequency_max := 10
+@export var sin_frequency_min := 5
+@export var sin_frequency_max := 8
 
 var sin_magnitude
 var sin_frequency
@@ -20,6 +20,7 @@ func _ready() -> void:
 	
 func _enter_tree() -> void:
 	direction = (global_position - target).normalized()
+	print(direction)
 	
 func get_velocity(delta: float):
 	movementTime += delta

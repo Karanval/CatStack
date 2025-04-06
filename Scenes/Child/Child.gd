@@ -33,10 +33,3 @@ func _on_player_start_hug() -> void:
 
 func _on_player_stop_hug() -> void:
 	$CuddleTime.paused = true
-	
-### DEBUG FEATURE
-func _input(event: InputEvent) -> void:
-	if event.is_action("ui_up"):
-		_change_sleep(1)
-	if event.is_action("ui_down"):
-		_change_sleep(-1)

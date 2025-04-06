@@ -13,6 +13,7 @@ config_version=5
 config/name="CatStack"
 run/main_scene="uid://bkh3ut2kq58l6"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://b7hbug1reqa0u"
 config/icon="res://icon.svg"
 
 [autoload]

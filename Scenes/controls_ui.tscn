@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2g5kw6jrd66v"]
+[gd_scene load_steps=9 format=3 uid="uid://c2g5kw6jrd66v"]
 
 [ext_resource type="Theme" uid="uid://uk4f1ybuct46" path="res://graphics/new_theme.tres" id="1_4imil"]
 [ext_resource type="Texture2D" uid="uid://ckv5wu431hxkw" path="res://graphics/icons/w.png" id="2_ppndy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgokr0dj18ct6" path="res://graphics/icons/d.png" id="4_all7k"]
 [ext_resource type="Texture2D" uid="uid://cg1qmgqylyryo" path="res://graphics/icons/s.png" id="5_raakh"]
 [ext_resource type="Texture2D" uid="uid://d4aehi8g50tcp" path="res://graphics/icons/e.png" id="6_4sajm"]
+[ext_resource type="Texture2D" uid="uid://dykppbdjb1dub" path="res://graphics/icons/mouse.png" id="8_e7pdq"]
 
 [node name="Controls" type="Control"]
 layout_mode = 3
@@ -105,3 +106,20 @@ texture = ExtResource("6_4sajm")
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "To Give a Conforting Hug"
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ppndy")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("8_e7pdq")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Shoot"

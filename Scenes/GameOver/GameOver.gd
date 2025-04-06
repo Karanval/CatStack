@@ -11,5 +11,5 @@ func _on_restart_button_button_down() -> void:
 	## Add the next level
 	#var next_level = game_scene.instantiate()
 	#root.add_child(next_level)
-
+	GameManager.resetScore()
 	get_tree().change_scene_to_file("res://Scenes/TestScene/TestScene.tscn")

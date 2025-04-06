@@ -14,13 +14,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ulla")
 
-[node name="SleepValue" type="RichTextLabel" parent="."]
+[node name="ScoreValue" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 22.0
 offset_right = 85.0
-offset_bottom = 62.0
-text = "Sleep %"
+offset_bottom = 65.0
+theme_override_font_sizes/normal_font_size = 20
+text = "Score"
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0

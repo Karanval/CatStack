@@ -6,11 +6,14 @@ extends Node
 
 var _ammo: int
 var _sleep: int
+var _score:= 0
 
 var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
 signal sleep_changed
+signal player_start_hug
+signal player_stop_hug
 signal ammo_changed
-signal game_over
+signal score_changed
 
 func _init():
 	_sleep = MAX_SLEEP
@@ -28,6 +31,8 @@ func _input(event: InputEvent) -> void:
 		
 func changeSleep(change: int):
 	_sleep += change
+	if change < 0:
+		_changeScore(change)
 	if _sleep > MAX_SLEEP:
 		_sleep = MAX_SLEEP
 	if _sleep <= 0:
@@ -51,7 +56,14 @@ func setAmmo(ammoValue: int):
 func getAmmo() -> int:
 	return _ammo
 	
+func _changeScore(change: int):
+	_score += change
+	emit_signal("score_changed", _score)
+	
+func resetScore():
+	_score = 0
+	emit_signal("score_changed", _score)
+	
 func _switch_to_game_over_screen():
 	_init()
-	
 	get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")

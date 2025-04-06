@@ -8,6 +8,8 @@ var _ammo: int
 var _sleep: int
 var _score:= 0
 
+var win:= false
+
 var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
 
 signal sleep_changed
@@ -65,12 +67,14 @@ func changeScore(change: int):
 	
 func resetScore():
 	_score = 0
+	win = false
 	emit_signal("score_changed", _score)
 	
 func getScore() -> int:
 	return _score
 	
 func endGame():
+	win = true
 	_switch_to_game_over_screen()
 	
 func _switch_to_game_over_screen():

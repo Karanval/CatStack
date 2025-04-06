@@ -55,6 +55,7 @@ script = ExtResource("2_7vrei")
 _area = NodePath("Area2D")
 _noise = NodePath("NoiseIcon")
 _noise_timer = NodePath("Timer")
+_type = 1
 
 [node name="NoiseIcon" type="Sprite2D" parent="NoiseMonke"]
 visible = false

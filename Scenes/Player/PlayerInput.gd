@@ -59,6 +59,7 @@ func jump():
 
 func shoot():
 	if GameManager.getAmmo() > 0:
+		Sound.play_effect(Sound.Effect.Shoot)
 		var bullet: Node = bullet_scene.instantiate()
 		bullet.DIRECTION = get_viewport().get_mouse_position() - position
 		bullet.START_POSITION = position

@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=3 uid="uid://da2xgrktua0iv"]
+
+[ext_resource type="Script" uid="uid://b3seu5dylyhfn" path="res://sounds/Sound.gd" id="1_pa30i"]
+[ext_resource type="AudioStream" uid="uid://d1lkpeavngcup" path="res://sounds/687373__alesiadavina__rising-into-darkness-cinematic-trailer.wav" id="2_1iar7"]
+[ext_resource type="AudioStream" uid="uid://bx4ht0kfgoyub" path="res://sounds/knock.wav" id="2_oh3yj"]
+[ext_resource type="AudioStream" uid="uid://cx2wieh6uhi84" path="res://sounds/chicken.wav" id="3_unc7q"]
+[ext_resource type="AudioStream" uid="uid://4utjlbs1uv5o" path="res://sounds/monke.wav" id="4_eeytf"]
+[ext_resource type="AudioStream" uid="uid://ceiu33b4vg6ue" path="res://sounds/maraca.wav" id="5_1ux6t"]
+[ext_resource type="AudioStream" uid="uid://b45y0dog6fiwl" path="res://sounds/shoot.wav" id="6_unc7q"]
+[ext_resource type="AudioStream" uid="uid://1yifaw2fuct3" path="res://sounds/step.wav" id="7_unc7q"]
+
+[node name="Sound" type="Node2D"]
+script = ExtResource("1_pa30i")
+effects = Dictionary[int, AudioStream]({
+0: ExtResource("2_oh3yj"),
+1: ExtResource("6_unc7q"),
+2: ExtResource("3_unc7q"),
+3: ExtResource("4_eeytf"),
+4: ExtResource("7_unc7q"),
+5: ExtResource("5_1ux6t")
+})
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1iar7")
+volume_db = -30.0
+autoplay = true
+bus = &"Music"

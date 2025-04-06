@@ -66,3 +66,8 @@ func land() -> void:
 		#
 		#var lerp_val = lerp(now, 1, _blend_speed * delta)
 		#set("parameters/BlendTree/Jump/blend_amount", lerp_val)
+
+
+func play_sound() -> void:
+	pass
+	#Sound.play_effect(Sound.Effect.Step)

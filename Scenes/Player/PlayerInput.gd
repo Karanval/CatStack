@@ -25,7 +25,7 @@ func _input(event: InputEvent) -> void:
 	if hugging:
 		if event.is_action_released("Hug") and hugging:
 			stop_hugging()
-		pass # disallow anything else while hugging
+		return # disallow anything else while hugging
 		
 	if event.is_action_pressed("Jump") and (is_on_floor() or can_extra_jump()):
 		jump()
@@ -47,6 +47,9 @@ func can_extra_jump() -> bool:
 
 
 func _physics_process(delta):
+	if hugging:
+		return
+		
 	velocity.y += _get_gravity() * delta
 	set_move_velocity()
 
@@ -86,6 +89,8 @@ func set_move_velocity():
 	animator.set_movement(velocity, is_on_floor())
 
 func start_hugging():
+	global_position = Vector2(249, 720)
+	velocity = Vector2.ZERO
 	hugging = true
 	GameManager.player_start_hug.emit()
 	animator.hug()
@@ -96,9 +101,7 @@ func stop_hugging():
 	animator.stop_hug()
 
 func _on_hug_area_area_entered(area: Area2D) -> void:
-	print("can hug")
 	can_hug = true
 
 func _on_hug_area_area_exited(area: Area2D) -> void:
-	print("cannot hug")
 	can_hug = false

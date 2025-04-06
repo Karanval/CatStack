@@ -28,14 +28,18 @@ layout_mode = 1
 
 [node name="AmmoCounter" parent="CanvasLayer/Control" instance=ExtResource("3_dl6we")]
 layout_mode = 1
-offset_left = 949.042
-offset_top = 3.0
-offset_right = 1049.04
-offset_bottom = 103.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 1799.0
+offset_top = 7.0
+offset_right = 1899.0
+offset_bottom = 107.0
+grow_horizontal = 1
 
 [node name="GameCountdown" parent="CanvasLayer/Control" instance=ExtResource("5_w3lok")]
 layout_mode = 1
-offset_left = 1817.0
-offset_top = 24.0
-offset_right = 1817.0
-offset_bottom = 24.0
+offset_left = 834.0
+offset_top = 21.0
+offset_right = 834.0
+offset_bottom = 21.0

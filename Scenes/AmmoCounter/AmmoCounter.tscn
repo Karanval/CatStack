@@ -4,20 +4,18 @@
 
 [node name="AmmoCounter" type="Control"]
 layout_mode = 3
-anchor_left = 0.498958
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.0888889
-offset_right = -0.000732422
 offset_bottom = 3.99999
+grow_horizontal = 0
 scale = Vector2(1, 0.96)
 script = ExtResource("1_8rnve")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 1
-offset_right = 158.0
-offset_bottom = 100.0
-theme_override_constants/margin_top = 20
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 3
 layout_mode = 2
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 168.0
+offset_bottom = 73.0

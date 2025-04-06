@@ -10,6 +10,8 @@ var _score:= 0
 
 var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
 signal sleep_changed
+signal player_start_hug
+signal player_stop_hug
 signal ammo_changed
 signal score_changed
 

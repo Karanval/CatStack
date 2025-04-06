@@ -15,11 +15,18 @@ var bullet_scene: PackedScene = preload("res://Scenes/Bullet/GravityBullet.tscn"
 @export var extra_jump_count: int = 1 # How many extra jumps the player is allowed after jumping from a surface (1 is double jump)
 
 var jump_count: int = 0
+var can_hug := false
+var hugging := false
 
 func _ready() -> void:
 	GameManager.changeAmmo(1)
 
 func _input(event: InputEvent) -> void:
+	if hugging:
+		if event.is_action_released("Hug") and hugging:
+			stop_hugging()
+		pass # disallow anything else while hugging
+		
 	if event.is_action_pressed("Jump") and (is_on_floor() or can_extra_jump()):
 		jump()
 
@@ -30,6 +37,9 @@ func _input(event: InputEvent) -> void:
 		set_collision_mask_value(6, false)
 	if (event.is_action_released("Down")):
 		set_collision_mask_value(6, true)
+		
+	if event.is_action_pressed("Hug") and can_hug:
+		start_hugging()
 		
 
 func can_extra_jump() -> bool:
@@ -74,3 +84,21 @@ func set_move_velocity():
 	velocity.x = direction * move_speed
 
 	animator.set_movement(velocity, is_on_floor())
+
+func start_hugging():
+	hugging = true
+	GameManager.player_start_hug.emit()
+	animator.hug()
+	
+func stop_hugging():
+	hugging = false
+	GameManager.player_stop_hug.emit()
+	animator.stop_hug()
+
+func _on_hug_area_area_entered(area: Area2D) -> void:
+	print("can hug")
+	can_hug = true
+
+func _on_hug_area_area_exited(area: Area2D) -> void:
+	print("cannot hug")
+	can_hug = false

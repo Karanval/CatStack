@@ -1,6 +1,7 @@
-[gd_scene load_steps=46 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=49 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="Texture2D" uid="uid://pgyf3sjlabiq" path="res://graphics/room/static_room.png" id="1_7gm67"]
+[ext_resource type="Script" uid="uid://dq23ex21yn4cs" path="res://Scenes/MorningLight.gd" id="1_jyver"]
 [ext_resource type="Texture2D" uid="uid://da03erc4l1ogv" path="res://graphics/room/wallpaper.png" id="1_xebr5"]
 [ext_resource type="PackedScene" uid="uid://cofp715asgg2m" path="res://Scenes/Child/Child.tscn" id="2_7gm67"]
 [ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
@@ -21,6 +22,14 @@
 [ext_resource type="Texture2D" uid="uid://bwr2347po8oyj" path="res://graphics/room/room_2.png" id="19_jyver"]
 [ext_resource type="Texture2D" uid="uid://bp383hnmh3md8" path="res://graphics/room/room_3.png" id="20_meqs4"]
 [ext_resource type="Texture2D" uid="uid://bom4mrqmlflxn" path="res://graphics/room/room_4.png" id="21_5amg4"]
+
+[sub_resource type="Gradient" id="Gradient_meqs4"]
+colors = PackedColorArray(0.90707, 0.478092, 0.423862, 1, 0.631373, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5amg4"]
+gradient = SubResource("Gradient_meqs4")
+fill = 1
+fill_from = Vector2(0.5, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2si3"]
 size = Vector2(464, 27)
@@ -136,6 +145,15 @@ animations = [{
 }]
 
 [node name="Room" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 263.0
+offset_top = 319.0
+offset_right = 824.0
+offset_bottom = 727.0
+texture = SubResource("GradientTexture2D_5amg4")
+script = ExtResource("1_jyver")
 
 [node name="Wallpaper" type="Sprite2D" parent="."]
 position = Vector2(961, 424)

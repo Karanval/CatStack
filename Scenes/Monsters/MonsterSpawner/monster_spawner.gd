@@ -23,9 +23,10 @@ func _process(delta: float) -> void:
 	current_timer_minimum = lerpf(timer_maximum, timer_minimum, game_time / GameManager.GAME_LENGTH )
 	
 func _on_timer_timeout() -> void:
-	if (GameManager.GAME_LENGTH - game_time <= 25):
+	if (GameManager.GAME_LENGTH - game_time <= 28):
 		var instance = ghostBoss.instantiate()
-		var spawn_location = air_spawn_locations[randi() % air_spawn_locations.size()]
+		var spawn_location = air_spawn_locations[1]
+		spawn_location.x += 80 # try to put the boss out of the screen
 		instance.global_position = spawn_location
 		add_child(instance)
 		$Timer.stop()

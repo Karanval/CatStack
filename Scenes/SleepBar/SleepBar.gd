@@ -18,7 +18,7 @@ func updateSleepValue(sleep: int) -> void:
 			tween.tween_property($MarginContainer/ProgressBar, "modulate", Color("#00ff81"), 0.5)
 			tween.tween_property($MarginContainer/ProgressBar, "modulate", Color("#ffffff"), 0.5)
 			tween.tween_callback(reset_green)
-	else:
+	elif (sleep < $MarginContainer/ProgressBar.value):
 		going_green = false
 		$MarginContainer/ProgressBar.modulate = Color("#ff00b9")
 		if (tween):

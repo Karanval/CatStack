@@ -6,8 +6,6 @@ extends RigidBody2D
 @export var SPEED: int
 @export var LIFETIME_SECONDS := 5
 
-signal damage_inflicted
-
 var _velocity
 
 func _ready() -> void:

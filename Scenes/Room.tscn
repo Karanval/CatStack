@@ -464,13 +464,13 @@ position = Vector2(929, 716)
 rotation = 0.178296
 scale = Vector2(-1, 1)
 
-[node name="MonsterSpawner" parent="." instance=ExtResource("7_xebr5")]
-ground_spawn_locations = Array[Vector2]([Vector2(2055, 800)])
-air_spawn_locations = Array[Vector2]([Vector2(2055, 250), Vector2(2055, 400)])
-
 [node name="BallJar" parent="." instance=ExtResource("10_ijr7e")]
 position = Vector2(1114, 148)
 scale = Vector2(0.559995, 0.559999)
+
+[node name="MonsterSpawner" parent="." instance=ExtResource("7_xebr5")]
+ground_spawn_locations = Array[Vector2]([Vector2(2055, 800)])
+air_spawn_locations = Array[Vector2]([Vector2(2055, 250), Vector2(2055, 400)])
 
 [node name="GodRays" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_vtib3")

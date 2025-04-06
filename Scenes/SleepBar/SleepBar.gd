@@ -6,7 +6,7 @@ func _ready() -> void:
 	$ScoreValue.text = str(0)
 
 func updateSleepValue(sleep: int) -> void:
-	$ProgressBar.value = sleep
+	$MarginContainer/ProgressBar.value = sleep
 	
 func updateScoreValue(score: int) -> void:
 	$ScoreValue.text = str(score)

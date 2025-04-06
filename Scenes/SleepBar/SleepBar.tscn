@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://vv76aw14qh3n"]
+[gd_scene load_steps=6 format=3 uid="uid://vv76aw14qh3n"]
 
 [ext_resource type="Script" uid="uid://bt7b7sufj3408" path="res://Scenes/SleepBar/SleepBar.gd" id="1_5ulla"]
+[ext_resource type="Theme" uid="uid://uk4f1ybuct46" path="res://graphics/new_theme.tres" id="1_hcfuc"]
 [ext_resource type="Texture2D" uid="uid://bjerd12jawnvs" path="res://graphics/icons/pb_under.png" id="2_pbthx"]
 [ext_resource type="Texture2D" uid="uid://dqmqmoymknakn" path="res://graphics/icons/pb_over.png" id="3_vscte"]
 [ext_resource type="Texture2D" uid="uid://b64kx2wktds8e" path="res://graphics/icons/pb_fill.png" id="4_vscte"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_hcfuc")
 script = ExtResource("1_5ulla")
 
 [node name="ScoreValue" type="RichTextLabel" parent="."]

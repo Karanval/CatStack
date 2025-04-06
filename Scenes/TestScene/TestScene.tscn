@@ -40,5 +40,6 @@ offset_left = 1817.0
 offset_top = 24.0
 offset_right = 1817.0
 offset_bottom = 24.0
+theme = null
 
 [node name="Controls" parent="CanvasLayer" instance=ExtResource("6_dd4tm")]

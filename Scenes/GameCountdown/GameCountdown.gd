@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 func _convert_to_minutes_text(time: int) -> String:
 	var minutes = floor(time/60)
 	var seconds = time - (minutes*60)
+	if seconds < 10:
+		return str(minutes) + ":0" + str(seconds)
 	return str(minutes) + ":" + str(seconds)
 
 func _on_game_countdown_timeout() -> void:

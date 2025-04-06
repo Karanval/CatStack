@@ -9,9 +9,11 @@ var _sleep: int
 var _score:= 0
 
 var game_over_scene = preload("res://Scenes/GameOver/GameOver.tscn")
+
 signal sleep_changed
 signal player_start_hug
 signal player_stop_hug
+signal player_out_of_ammo
 signal ammo_changed
 signal score_changed
 
@@ -47,6 +49,7 @@ func changeAmmo(change: int):
 		_ammo = MAX_AMMO
 	if _ammo <= 0:
 		_ammo = 0
+		GameManager.player_out_of_ammo.emit()
 	setAmmo(_ammo)
 	
 func setAmmo(ammoValue: int):

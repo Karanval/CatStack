@@ -17,6 +17,7 @@ func _ready() -> void:
 	randomize()
 	sin_magnitude = randf_range(sin_magnitude_min, sin_magnitude_max)
 	sin_frequency = randf_range(sin_frequency_min, sin_frequency_max)
+	speed_modifier += randf_range(-0.05, 0.05)
 	
 func _enter_tree() -> void:
 	direction = (global_position - target).normalized()

@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://gqxcqbu4xg3s" path="res://Scenes/AmmoCounter/AmmoCounter.gd" id="1_8rnve"]
 
-[node name="AmmoCounter" type="CenterContainer"]
-offset_bottom = 3.99999
+[node name="AmmoCounter" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1, 0.96)
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
 script = ExtResource("1_8rnve")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

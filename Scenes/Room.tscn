@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=45 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="Texture2D" uid="uid://pgyf3sjlabiq" path="res://graphics/room/static_room.png" id="1_7gm67"]
 [ext_resource type="Script" path="res://Scenes/MorningLight.gd" id="1_jyver"]
@@ -18,13 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://5yyn0ecortyy" path="res://graphics/items/books_3.png" id="12_f1ah8"]
 [ext_resource type="Texture2D" uid="uid://rbqn72qt3i55" path="res://graphics/room/poster_2.png" id="15_njk7e"]
 [ext_resource type="Texture2D" uid="uid://ofcxleg88lag" path="res://graphics/room/box.png" id="16_76nkg"]
-[ext_resource type="Shader" uid="uid://dcgyh1cr0375k" path="res://Scenes/Moonlight.gdshader" id="16_b7nhj"]
+[ext_resource type="Shader" path="res://Scenes/Moonlight.gdshader" id="16_b7nhj"]
 [ext_resource type="Texture2D" uid="uid://bm4pwohthv0kp" path="res://graphics/room/box_2.png" id="17_njk7e"]
 [ext_resource type="Script" uid="uid://hdjif32s6nt5" path="res://Scenes/god_rays.gd" id="17_vtib3"]
-[ext_resource type="Texture2D" uid="uid://c4x7cyv76dked" path="res://graphics/room/room_1.png" id="18_6dp4w"]
-[ext_resource type="Texture2D" uid="uid://bwr2347po8oyj" path="res://graphics/room/room_2.png" id="19_jyver"]
-[ext_resource type="Texture2D" uid="uid://bp383hnmh3md8" path="res://graphics/room/room_3.png" id="20_meqs4"]
-[ext_resource type="Texture2D" uid="uid://bom4mrqmlflxn" path="res://graphics/room/room_4.png" id="21_5amg4"]
 [ext_resource type="Texture2D" uid="uid://b351xn1axilvu" path="res://graphics/room/cat_plush.png" id="23_03uge"]
 [ext_resource type="Texture2D" uid="uid://cd3mpfwi8ndl5" path="res://graphics/room/cup.png" id="24_qghig"]
 [ext_resource type="Texture2D" uid="uid://dv83vh1slyem0" path="res://graphics/room/flower.png" id="25_76nkg"]
@@ -100,56 +96,6 @@ shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dgula"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsvln"]
-atlas = ExtResource("18_6dp4w")
-region = Rect2(0, 0, 256, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_03uge"]
-atlas = ExtResource("19_jyver")
-region = Rect2(0, 0, 256, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qghig"]
-atlas = ExtResource("20_meqs4")
-region = Rect2(0, 0, 256, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76nkg"]
-atlas = ExtResource("21_5amg4")
-region = Rect2(0, 0, 256, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_njk7e"]
-atlas = ExtResource("20_meqs4")
-region = Rect2(0, 0, 256, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v76v7"]
-atlas = ExtResource("19_jyver")
-region = Rect2(0, 0, 256, 512)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jpaqf"]
-animations = [{
-"frames": [{
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_gsvln")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_03uge")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qghig")
-}, {
-"duration": 5.0,
-"texture": SubResource("AtlasTexture_76nkg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_njk7e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v76v7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Room" type="Node2D"]
 
@@ -533,11 +479,3 @@ rotation = 3.14159
 scale = Vector2(665.729, -536.897)
 texture = SubResource("CanvasTexture_dgula")
 script = ExtResource("17_vtib3")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1854, 653)
-scale = Vector2(1.3, 1.3)
-sprite_frames = SubResource("SpriteFrames_jpaqf")
-autoplay = "default"
-frame = 3
-frame_progress = 0.327642

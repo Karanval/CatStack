@@ -1,7 +1,7 @@
-[gd_scene load_steps=49 format=3 uid="uid://0prw0oi6d0sx"]
+[gd_scene load_steps=56 format=3 uid="uid://0prw0oi6d0sx"]
 
 [ext_resource type="Texture2D" uid="uid://pgyf3sjlabiq" path="res://graphics/room/static_room.png" id="1_7gm67"]
-[ext_resource type="Script" uid="uid://dq23ex21yn4cs" path="res://Scenes/MorningLight.gd" id="1_jyver"]
+[ext_resource type="Script" path="res://Scenes/MorningLight.gd" id="1_jyver"]
 [ext_resource type="Texture2D" uid="uid://da03erc4l1ogv" path="res://graphics/room/wallpaper.png" id="1_xebr5"]
 [ext_resource type="PackedScene" uid="uid://cofp715asgg2m" path="res://Scenes/Child/Child.tscn" id="2_7gm67"]
 [ext_resource type="PackedScene" uid="uid://blm4cbfri34hq" path="res://Scenes/Furniture/Shelf.tscn" id="2_a2si3"]
@@ -16,12 +16,19 @@
 [ext_resource type="Texture2D" uid="uid://bgqaqkv8rf2nx" path="res://graphics/items/books_1_2.png" id="11_0sh5y"]
 [ext_resource type="Texture2D" uid="uid://cou7vo0n6xg4q" path="res://graphics/items/books_2.png" id="11_vofke"]
 [ext_resource type="Texture2D" uid="uid://5yyn0ecortyy" path="res://graphics/items/books_3.png" id="12_f1ah8"]
+[ext_resource type="Texture2D" uid="uid://rbqn72qt3i55" path="res://graphics/room/poster_2.png" id="15_njk7e"]
+[ext_resource type="Texture2D" uid="uid://ofcxleg88lag" path="res://graphics/room/box.png" id="16_76nkg"]
 [ext_resource type="Shader" uid="uid://dcgyh1cr0375k" path="res://Scenes/Moonlight.gdshader" id="16_b7nhj"]
+[ext_resource type="Texture2D" uid="uid://bm4pwohthv0kp" path="res://graphics/room/box_2.png" id="17_njk7e"]
 [ext_resource type="Script" uid="uid://hdjif32s6nt5" path="res://Scenes/god_rays.gd" id="17_vtib3"]
 [ext_resource type="Texture2D" uid="uid://c4x7cyv76dked" path="res://graphics/room/room_1.png" id="18_6dp4w"]
 [ext_resource type="Texture2D" uid="uid://bwr2347po8oyj" path="res://graphics/room/room_2.png" id="19_jyver"]
 [ext_resource type="Texture2D" uid="uid://bp383hnmh3md8" path="res://graphics/room/room_3.png" id="20_meqs4"]
 [ext_resource type="Texture2D" uid="uid://bom4mrqmlflxn" path="res://graphics/room/room_4.png" id="21_5amg4"]
+[ext_resource type="Texture2D" uid="uid://b351xn1axilvu" path="res://graphics/room/cat_plush.png" id="23_03uge"]
+[ext_resource type="Texture2D" uid="uid://cd3mpfwi8ndl5" path="res://graphics/room/cup.png" id="24_qghig"]
+[ext_resource type="Texture2D" uid="uid://dv83vh1slyem0" path="res://graphics/room/flower.png" id="25_76nkg"]
+[ext_resource type="Texture2D" uid="uid://c5e16jeytp7xx" path="res://graphics/room/poster.png" id="26_njk7e"]
 
 [sub_resource type="Gradient" id="Gradient_meqs4"]
 colors = PackedColorArray(0.90707, 0.478092, 0.423862, 1, 0.631373, 1, 1, 1)
@@ -431,6 +438,61 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("10_l0f8h")
 flip_h = true
 flip_v = true
+
+[node name="CatPlush" type="Sprite2D" parent="decor_items"]
+position = Vector2(84, 166)
+texture = ExtResource("23_03uge")
+
+[node name="CatPlush2" type="Sprite2D" parent="decor_items"]
+position = Vector2(180, 184)
+scale = Vector2(0.710938, 0.710938)
+texture = ExtResource("23_03uge")
+
+[node name="CatPlush3" type="Sprite2D" parent="decor_items"]
+position = Vector2(244.75, 202.25)
+scale = Vector2(0.425781, 0.425781)
+texture = ExtResource("23_03uge")
+
+[node name="Cup" type="Sprite2D" parent="decor_items"]
+position = Vector2(828, 692)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("24_qghig")
+
+[node name="Flower" type="Sprite2D" parent="decor_items"]
+position = Vector2(706, 175)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("25_76nkg")
+
+[node name="Poster2" type="Sprite2D" parent="decor_items"]
+position = Vector2(1193, 514)
+texture = ExtResource("15_njk7e")
+
+[node name="Poster" type="Sprite2D" parent="decor_items"]
+position = Vector2(1103, 419)
+texture = ExtResource("26_njk7e")
+
+[node name="Box" type="Sprite2D" parent="decor_items"]
+position = Vector2(1360, 874)
+texture = ExtResource("16_76nkg")
+
+[node name="Box2" type="Sprite2D" parent="decor_items"]
+position = Vector2(359, 280)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("16_76nkg")
+
+[node name="Box3" type="Sprite2D" parent="decor_items"]
+position = Vector2(451, 280)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("17_njk7e")
+
+[node name="Box4" type="Sprite2D" parent="decor_items"]
+position = Vector2(1485, 874)
+texture = ExtResource("17_njk7e")
+
+[node name="Box5" type="Sprite2D" parent="decor_items"]
+position = Vector2(947, 422)
+scale = Vector2(0.380208, 0.523438)
+texture = ExtResource("16_76nkg")
 
 [node name="noise_makers" type="Node2D" parent="."]
 

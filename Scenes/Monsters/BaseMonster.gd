@@ -16,6 +16,7 @@ enum MonsterState {
 @export var damage := 10
 @export var health := HEALTH
 @export var speed_modifier := 1.0
+@export var damage_scale_modifier := 0.8
 
 var damage_tween: Tween
 var state := MonsterState.MOVING
@@ -40,7 +41,7 @@ func take_damage(damage: int):
 	else:
 		damage_tween = create_tween()
 		$Sprite2D.modulate = Color.PURPLE
-		$Sprite2D.scale = original_scale * 0.8
+		$Sprite2D.scale = original_scale * damage_scale_modifier
 		damage_tween.tween_property($Sprite2D, "modulate", original_modulate, 0.2)
 		damage_tween.parallel().tween_property($Sprite2D, "scale", original_scale, 0.2).set_trans(Tween.TRANS_BOUNCE)
 

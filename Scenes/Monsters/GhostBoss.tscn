@@ -36,6 +36,7 @@ sin_frequency_max = 2
 damage = 60
 health = 1000
 speed_modifier = 0.4
+damage_scale_modifier = 0.9
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(2, 2)

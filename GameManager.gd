@@ -72,4 +72,4 @@ func endGame():
 	
 func _switch_to_game_over_screen():
 	_init()
-	get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/GameOver/GameOver.tscn")

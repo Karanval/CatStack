@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://bxbeuacwkqeox" path="res://Scenes/Items/NoiseMaker.gd" id="2_euqfs"]
 [ext_resource type="Texture2D" uid="uid://b0afhgus1k6yg" path="res://graphics/icons/noise.png" id="3_s4w7i"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48eyf"]
+radius = 21.4286
+height = 130.0
+
 [sub_resource type="Animation" id="Animation_48eyf"]
 length = 0.001
 tracks/0/type = "value"
@@ -42,10 +46,6 @@ _data = {
 &"noise": SubResource("Animation_7vrei")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48eyf"]
-radius = 21.4286
-height = 130.0
-
 [node name="Node2D" type="Node2D"]
 
 [node name="NoiseChicekn" type="Sprite2D" parent="." node_paths=PackedStringArray("_area", "_noise", "_noise_timer")]
@@ -53,20 +53,8 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_r4jct")
 script = ExtResource("2_euqfs")
 _area = NodePath("Area2D")
-_noise = NodePath("NoiseIcon")
+_noise = NodePath("../NoiseIcon")
 _noise_timer = NodePath("Timer")
-
-[node name="NoiseIcon" type="Sprite2D" parent="NoiseChicekn"]
-visible = false
-position = Vector2(0, -78.571)
-rotation = -0.98572
-texture = ExtResource("3_s4w7i")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NoiseChicekn/NoiseIcon"]
-libraries = {
-&"": SubResource("AnimationLibrary_1wssf")
-}
-autoplay = "noise"
 
 [node name="Area2D" type="Area2D" parent="NoiseChicekn"]
 collision_mask = 2
@@ -77,3 +65,16 @@ shape = SubResource("CapsuleShape2D_48eyf")
 
 [node name="Timer" type="Timer" parent="NoiseChicekn"]
 wait_time = 2.0
+
+[node name="NoiseIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -54.9997)
+rotation = -0.98572
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_s4w7i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NoiseIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_1wssf")
+}
+autoplay = "noise"

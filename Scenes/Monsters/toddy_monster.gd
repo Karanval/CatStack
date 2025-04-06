@@ -10,6 +10,7 @@ var jump_cooldown := 2.0
 
 func _ready():
 	reset_cooldown()
+	speed_modifier += randf_range(-0.05, 0.05)
 	
 func get_velocity(delta: float):
 	if jump_cooldown > 0:

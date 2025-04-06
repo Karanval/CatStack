@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1866dsru0rjp"]
+[gd_scene load_steps=8 format=3 uid="uid://b1866dsru0rjp"]
 
 [ext_resource type="PackedScene" uid="uid://0prw0oi6d0sx" path="res://Scenes/Room.tscn" id="1_qsb0u"]
 [ext_resource type="PackedScene" uid="uid://vv76aw14qh3n" path="res://Scenes/SleepBar/SleepBar.tscn" id="2_bsxja"]
+[ext_resource type="Theme" path="res://graphics/new_theme.tres" id="3_3n0ma"]
 [ext_resource type="PackedScene" uid="uid://cs60ejphnb730" path="res://Scenes/AmmoCounter/AmmoCounter.tscn" id="3_dl6we"]
 [ext_resource type="PackedScene" uid="uid://dnimq36cs47g6" path="res://Scenes/Player/Player.tscn" id="4_dl6we"]
 [ext_resource type="PackedScene" uid="uid://31vqfbpxo8vx" path="res://Scenes/GameCountdown/GameCountdown.tscn" id="5_w3lok"]
@@ -18,28 +19,33 @@ position = Vector2(164, 729)
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_3n0ma")
 
-[node name="SleepBar" parent="CanvasLayer/Control" instance=ExtResource("2_bsxja")]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 82.0
+grow_horizontal = 2
 
-[node name="AmmoCounter" parent="CanvasLayer/Control" instance=ExtResource("3_dl6we")]
-layout_mode = 1
-offset_left = 949.042
-offset_top = 3.0
-offset_right = 1049.04
-offset_bottom = 103.0
+[node name="SleepBar" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("2_bsxja")]
+layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="GameCountdown" parent="CanvasLayer/Control" instance=ExtResource("5_w3lok")]
-layout_mode = 1
-offset_left = 1817.0
-offset_top = 24.0
-offset_right = 1817.0
-offset_bottom = 24.0
+[node name="GameCountdown" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("5_w3lok")]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = null
+
+[node name="AmmoCounter" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("3_dl6we")]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Controls" parent="CanvasLayer" instance=ExtResource("6_dd4tm")]

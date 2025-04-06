@@ -18,12 +18,13 @@ func _ready() -> void:
 func _change_sleep(amount: int) -> void:		
 	GameManager.changeSleep(amount)
 		
-# Player cuddles with the child
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	# Monster reaches the child
 	if body.is_in_group("monsters"):
 		var monster = body as BaseMonster
 		_change_sleep(-monster.damage)
 		monster.call_deferred("cause_disturbance")
+	# Player cuddles with the child
 	else:
 		$CuddleTime.paused = false
 
